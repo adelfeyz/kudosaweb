@@ -1,0 +1,353 @@
+[
+  {
+    "slide": 1,
+    "texts": [
+      "Labkhand",
+      "Website &amp; Patient Portal Overview",
+      "Prepared by:",
+      " Raveshmand."
+    ]
+  },
+  {
+    "slide": 2,
+    "texts": [
+      "Purpose of This Presentation",
+      "This presentation provides a clear overview of the ",
+      "Labkhand",
+      " platform and patient portal",
+      ", including:",
+      "Online appointment booking functionality",
+      "Patient-facing website features",
+      "The admin portal / CRM used by the team",
+      "How this system differs from a standard dental website",
+      "The goal is to demonstrate ",
+      "how patients interact with the website",
+      " and ",
+      "how the practice manages inquiries efficiently behind the scenes",
+      "."
+    ]
+  },
+  {
+    "slide": 3,
+    "texts": [
+      "Appointment Booking"
+    ]
+  },
+  {
+    "slide": 4,
+    "texts": [
+      "Patients can request appointments directly from the website.",
+      "What Patients Can Do",
+      "Click ",
+      "“",
+      "Schedule Appointment",
+      "”",
+      " from anywhere on the site",
+      "Fill out an appointment request form including:",
+      "Name, email, phone",
+      "Preferred date &amp; time",
+      "Service type:",
+      "General Dentistry",
+      "Cosmetic Dentistry",
+      "Dental Implants",
+      "Invisalign",
+      "Gum Grafts",
+      "All-on-4",
+      "Optional message",
+      "4"
+    ]
+  },
+  {
+    "slide": 5,
+    "texts": [
+      "How Appointment Booking Works",
+      "Patient submits appointment request form",
+      "Request is sent to the office",
+      "Office receives an email notification",
+      "Request is stored in the admin panel",
+      "Team can manage, follow up, and update status",
+      "Result:",
+      "No lost requests. No scattered emails. Everything in one place."
+    ]
+  },
+  {
+    "slide": 6,
+    "texts": [
+      "Appointment Management",
+      "View all appointment requests",
+      "See patient details",
+      "Preferred date/time &amp; service",
+      "Track status:",
+      "New",
+      "Pending",
+      "Scheduled",
+      "No-show",
+      "Canceled",
+      "Update and manage appointments easily",
+      "6"
+    ]
+  },
+  {
+    "slide": 7,
+    "texts": [
+      "Website content"
+    ]
+  },
+  {
+    "slide": 8,
+    "texts": [
+      "What Your New Website Includes",
+      "(Patient-Facing)",
+      "8",
+      "Dedicated pages for:",
+      "General Dentistry",
+      "Cosmetic Dentistry",
+      "Dental Implants",
+      "Invisalign",
+      "All-on-4",
+      "Gum Grafts",
+      "Each page:",
+      "Explains the service clearly",
+      "Builds patient confidence",
+      "Includes call-to-action for appointments",
+      "Homepage",
+      "Hero section with ",
+      "Schedule Appointment",
+      " button",
+      "About section",
+      "Multi-specialty overview",
+      "Team introduction",
+      "Services overview",
+      "Patient testimonials",
+      "Blog preview",
+      "FAQ section",
+      "Contact information",
+      "About &amp; Trust Pages",
+      "The Difference",
+      " (what makes your practice unique)",
+      "Meet the Team",
+      "Patient Reviews"
+    ]
+  },
+  {
+    "slide": 9,
+    "texts": [
+      "Smile Gallery"
+    ]
+  },
+  {
+    "slide": 10,
+    "texts": [
+      "Smile Gallery",
+      "Before / After photo gallery",
+      "Organized by service:",
+      "Prepless",
+      " Veneers",
+      "Smile Revive",
+      "Invisalign",
+      "Other Services",
+      "Easy for patients to browse",
+      "Easy for your team to update (no coding)"
+    ]
+  },
+  {
+    "slide": 11,
+    "texts": [
+      "Blog (SEO Growth Engine)"
+    ]
+  },
+  {
+    "slide": 12,
+    "texts": [
+      "Blog (SEO Growth Engine)",
+      "12",
+      "Educational dental articles",
+      "Search functionality",
+      "Categories &amp; tags",
+      "Individual post pages",
+      "Built to support SEO and patient education",
+      "Educational articles help patients find your practice through Google while answering common questions and building trust before they book an appointment.",
+      "Consistent educational content improves search visibility, attracts high-intent patients, and supports long-term organic growth for your practice."
+    ]
+  },
+  {
+    "slide": 13,
+    "texts": [
+      "Blog management",
+      "13",
+      "Create, edit, publish posts"
+    ]
+  },
+  {
+    "slide": 14,
+    "texts": [
+      "Blog management",
+      "14",
+      "Categories",
+      " and ",
+      "tags",
+      " serve as effective tools for organizing content, enabling better monitoring of content strategy and structuring the content hierarchy."
+    ]
+  },
+  {
+    "slide": 15,
+    "texts": [
+      "Blog management",
+      "15",
+      "SEO Title",
+      "Manage SEO Settings Effectively for Improved Website Ranking",
+      "SEO Description",
+      "Learn how to manage SEO settings to enhance your website's visibility and search engine performance.",
+      "Meta Keywords",
+      "SEO management, website optimization, search engine ranking"
+    ]
+  },
+  {
+    "slide": 16,
+    "texts": [
+      "Blog management",
+      "16",
+      "Automated image management and generation using Google Imagen 4 and DALL·E tailored to blog content."
+    ]
+  },
+  {
+    "slide": 17,
+    "texts": [
+      "Blog management",
+      "17",
+      "Manage blog authors and their profiles"
+    ]
+  },
+  {
+    "slide": 18,
+    "texts": [
+      "Marketing &amp; Analytics"
+    ]
+  },
+  {
+    "slide": 19,
+    "texts": [
+      "Marketing &amp; Analytics",
+      "19",
+      "Create tracking links for campaigns:",
+      "Google Ads",
+      "Social media",
+      "Referrals",
+      "Track:",
+      "Lead sources",
+      "Conversion rates",
+      "Patient journeys (visit → appointment)",
+      "Link tracking on a website provides key insights to improve marketing strategies by monitoring links, clicks, sessions, and conversions. This data will be used to evaluate each campaign and optimize marketing performance."
+    ]
+  },
+  {
+    "slide": 20,
+    "texts": [
+      "Newsletter Management",
+      "Newsletter Management is essential for optimizing the impact of email marketing campaigns. Key aspects include:",
+      "Viewing Subscribers",
+      "T",
+      "racking Subscription Status",
+      "Managing Mailing Lists",
+      "20"
+    ]
+  },
+  {
+    "slide": 21,
+    "texts": [
+      "Differentiations"
+    ]
+  },
+  {
+    "slide": 22,
+    "texts": [
+      "How This Differs from a Standard Dental Website",
+      "22",
+      "Standard Dental Website",
+      "Basic service info",
+      "Contact form emails",
+      "Static gallery",
+      "No inquiry tracking",
+      "No marketing visibility",
+      "Your ",
+      "iCreate",
+      " Smiles Portal",
+      "Centralized Admin Panel",
+      "Appointment management",
+      "Blog + AI content tools",
+      "Gallery management",
+      "Marketing analytics",
+      "Patient journey tracking",
+      "Your website is ",
+      "not just a dental website",
+      ".",
+      "It is a ",
+      "patient management, marketing, and growth platform",
+      "."
+    ]
+  },
+  {
+    "slide": 23,
+    "texts": [
+      "23",
+      "Feature",
+      "Standard Website",
+      "iCreate Smiles",
+      "Appointment Booking",
+      "✅",
+      "✅",
+      "Contact Form",
+      "✅",
+      "✅",
+      "Before/After Gallery",
+      "✅",
+      "✅",
+      "Blog",
+      "❌",
+      "✅",
+      "Admin Panel / CRM",
+      "❌",
+      "✅",
+      "Appointment Management",
+      "❌",
+      "✅",
+      "Marketing Analytics",
+      "❌",
+      "✅",
+      "AI Content Tools",
+      "❌",
+      "✅",
+      "Patient Inquiry Tracking",
+      "❌",
+      "✅",
+      "Newsletter Management",
+      "❌",
+      "✅",
+      "User Management",
+      "❌",
+      "✅",
+      "Feature Comparison"
+    ]
+  },
+  {
+    "slide": 24,
+    "texts": [
+      "Q&amp;A",
+      "Q: Can patients book online?",
+      "Yes — appointment requests are live and stored in the Admin Panel.",
+      "Q: Do I need technical knowledge?",
+      "No — everything is managed through an easy admin panel.",
+      "Q: What makes this different?",
+      "This is a",
+      "Q: What about future requirements?",
+      "It’s completely ready for future development and integrations by our team.",
+      "24"
+    ]
+  },
+  {
+    "slide": 25,
+    "texts": [
+      "Thank you"
+    ]
+  }
+]

@@ -1,0 +1,358 @@
+{
+  "info": {
+    "name": "Pointer Blog API - Third Party Integration",
+    "description": "API collection for third-party services to create and manage draft blog posts.\n\nSETUP INSTRUCTIONS:\n1. Contact Pointer to obtain your API key\n2. Replace 'YOUR_API_KEY_HERE' with your actual API key\n3. Start creating and managing draft posts!\n\nIMPORTANT:\n- You can only create and edit DRAFT posts\n- All posts are automatically assigned to Dr. Samaneh Daftarian\n- You cannot access published posts\n- Rate limit: 100 requests per hour",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "version": "1.0.0"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://unified-api.adel-feiz.workers.dev/api/external/blog",
+      "type": "string"
+    },
+    {
+      "key": "apiKey",
+      "value": "YOUR_API_KEY_HERE",
+      "type": "string",
+      "description": "Your API key provided by Pointer"
+    }
+  ],
+  "item": [
+    {
+      "name": "Authentication Test",
+      "item": [
+        {
+          "name": "Test API Connection",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/posts?limit=1",
+              "host": ["{{baseUrl}}"],
+              "path": ["posts"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Draft Posts Management",
+      "item": [
+        {
+          "name": "List All Draft Posts",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/posts?page=1&limit=20",
+              "host": ["{{baseUrl}}"],
+              "path": ["posts"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "20"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search Draft Posts",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/posts?search=dental&page=1&limit=10",
+              "host": ["{{baseUrl}}"],
+              "path": ["posts"],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "dental"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Single Draft Post",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/posts/123",
+              "host": ["{{baseUrl}}"],
+              "path": ["posts", "123"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create New Draft Post",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Your Blog Post Title\",\n  \"slug\": \"your-blog-post-slug\",\n  \"excerpt\": \"Brief description of your blog post.\",\n  \"content\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Your blog post content goes here. You can use multiple paragraphs and formatting.\\\"}]}]}\",\n  \"featured_image_url\": \"https://example.com/your-image.jpg\",\n  \"seo_title\": \"SEO Optimized Title\",\n  \"seo_description\": \"SEO meta description for search engines.\",\n  \"meta_keywords\": \"dental, treatment, health\",\n  \"category_ids\": [1, 3],\n  \"tag_ids\": [5, 8, 12]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/posts",
+              "host": ["{{baseUrl}}"],
+              "path": ["posts"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Draft Post",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Updated Blog Post Title\",\n  \"excerpt\": \"Updated description of your blog post.\",\n  \"content\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Your updated blog post content goes here.\\\"}]}]}\",\n  \"category_ids\": [1, 2, 3],\n  \"tag_ids\": [5, 8, 10]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/posts/123",
+              "host": ["{{baseUrl}}"],
+              "path": ["posts", "123"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Reference Data",
+      "item": [
+        {
+          "name": "Get Available Categories",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/categories",
+              "host": ["{{baseUrl}}"],
+              "path": ["categories"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Available Tags",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/tags",
+              "host": ["{{baseUrl}}"],
+              "path": ["tags"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Default Author Info",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/authors",
+              "host": ["{{baseUrl}}"],
+              "path": ["authors"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Content Examples",
+      "item": [
+        {
+          "name": "Simple Text Post",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Simple Blog Post\",\n  \"slug\": \"simple-blog-post\",\n  \"excerpt\": \"A simple blog post example.\",\n  \"content\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"This is a simple blog post with just text content.\\\"}]}]}\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/posts",
+              "host": ["{{baseUrl}}"],
+              "path": ["posts"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Rich Content Post",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Rich Content Blog Post\",\n  \"slug\": \"rich-content-blog-post\",\n  \"excerpt\": \"A blog post with rich formatting and multiple elements.\",\n  \"content\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"heading\\\",\\\"attrs\\\":{\\\"level\\\":1},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Main Heading\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"This is a paragraph with \\\"},{\\\"type\\\":\\\"text\\\",\\\"marks\\\":[{\\\"type\\\":\\\"bold\\\"}],\\\"text\\\":\\\"bold text\\\"},{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\" and \\\"},{\\\"type\\\":\\\"text\\\",\\\"marks\\\":[{\\\"type\\\":\\\"italic\\\"}],\\\"text\\\":\\\"italic text\\\"},{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\".\\\"}]},{\\\"type\\\":\\\"bulletList\\\",\\\"content\\\":[{\\\"type\\\":\\\"listItem\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"First bullet point\\\"}]}]},{\\\"type\\\":\\\"listItem\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Second bullet point\\\"}]}]}]}]}\",\n  \"featured_image_url\": \"https://example.com/featured-image.jpg\",\n  \"seo_title\": \"Rich Content Blog Post - SEO Title\",\n  \"seo_description\": \"SEO description for rich content blog post.\",\n  \"meta_keywords\": \"rich content, formatting, example\",\n  \"category_ids\": [1],\n  \"tag_ids\": [5, 8]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/posts",
+              "host": ["{{baseUrl}}"],
+              "path": ["posts"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// Validate API key",
+          "const apiKey = pm.variables.get('apiKey');",
+          "if (!apiKey || apiKey === 'YOUR_API_KEY_HERE') {",
+          "    console.error('❌ Please set your API key in the collection variables!');",
+          "    console.log('📋 Contact Pointer to get your API key.');",
+          "} else {",
+          "    console.log('✅ API key is set');",
+          "}",
+          "",
+          "// Log request details",
+          "console.log('🚀 Making request to:', pm.request.url.toString());"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// Basic response validation",
+          "pm.test('Response time is reasonable', function () {",
+          "    pm.expect(pm.response.responseTime).to.be.below(5000);",
+          "});",
+          "",
+          "pm.test('Response has valid JSON', function () {",
+          "    pm.response.to.be.json;",
+          "});",
+          "",
+          "// Success validation",
+          "if (pm.response.status >= 200 && pm.response.status < 300) {",
+          "    console.log('✅ Request successful!');",
+          "    if (pm.response.json() && pm.response.json().posts) {",
+          "        console.log('📄 Found', pm.response.json().posts.length, 'posts');",
+          "    }",
+          "} else if (pm.response.status === 401) {",
+          "    console.error('❌ Authentication failed!');",
+          "    console.log('🔧 Check your API key in the collection variables');",
+          "} else if (pm.response.status === 403) {",
+          "    console.error('❌ Access denied!');",
+          "    console.log('🔧 You can only access draft posts');",
+          "} else if (pm.response.status === 429) {",
+          "    console.error('❌ Rate limit exceeded!');",
+          "    console.log('🔧 Wait before making more requests (100/hour limit)');",
+          "}",
+          "",
+          "// Log response summary",
+          "console.log('📊 Status:', pm.response.status);",
+          "console.log('⏱️ Time:', pm.response.responseTime + 'ms');"
+        ]
+      }
+    }
+  ]
+}

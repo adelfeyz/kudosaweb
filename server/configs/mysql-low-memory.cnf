@@ -1,0 +1,34 @@
+[mysqld]
+# Low memory configuration for 2GB RAM server
+# This file should be placed in /etc/mysql/mysql.conf.d/99-low-memory.cnf
+
+# InnoDB settings
+innodb_buffer_pool_size = 400M
+innodb_log_file_size = 64M
+innodb_flush_log_at_trx_commit = 2
+innodb_flush_method = O_DIRECT
+innodb_file_per_table = 1
+
+# Memory settings
+key_buffer_size = 32M
+max_connections = 50
+thread_cache_size = 4
+table_open_cache = 2000
+tmp_table_size = 32M
+max_heap_table_size = 32M
+
+# Disable query cache (uses memory)
+query_cache_type = 0
+query_cache_size = 0
+
+# Performance settings
+sort_buffer_size = 2M
+read_buffer_size = 1M
+read_rnd_buffer_size = 1M
+join_buffer_size = 1M
+
+# Logging (optional, can be disabled to save I/O)
+slow_query_log = 1
+slow_query_log_file = /var/log/mysql/slow.log
+long_query_time = 2
+

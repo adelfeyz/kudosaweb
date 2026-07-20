@@ -1,0 +1,72 @@
+version: '3.8'
+
+services:
+  website:
+    build:
+      context: ../..
+      dockerfile: docker/website/Dockerfile
+      args:
+        NEXT_PUBLIC_API_BASE_URL: http://api:3001
+        NEXT_PUBLIC_SITE_URL: ${SITE_URL:-http://localhost:3000}
+    container_name: pointer-website
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_API_BASE_URL=http://api:3001
+      - NEXT_PUBLIC_SITE_URL=${SITE_URL:-http://localhost:3000}
+      - PORT=3000
+    networks:
+      - pointer-network
+    restart: unless-stopped
+    depends_on:
+      - api
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  api:
+    build:
+      context: ../..
+      dockerfile: docker/api/Dockerfile
+    container_name: pointer-api
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+      - DB_PATH=/app/data/database.db
+      - SCHEMA_PATH=/app/database/schema.sql
+      - JWT_SECRET=${JWT_SECRET:-change-this-secret-key}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD:-admin}
+      - BREVO_API_KEY=${BREVO_API_KEY:-}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY:-}
+      - APP_BASE_URL=${SITE_URL:-http://localhost:3000}
+    volumes:
+      - pointer-db-data:/app/data
+      - pointer-uploads-data:/app/data/uploads
+    networks:
+      - pointer-network
+    restart: unless-stopped
+    entrypoint: ["/bin/sh", "/app/entrypoint.sh"]
+    command: ["node", "server.js"]
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  pointer-db-data:
+    driver: local
+  pointer-uploads-data:
+    driver: local
+
+networks:
+  pointer-network:
+    driver: bridge

@@ -1,0 +1,70 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+node_modules/
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# vercel
+.vercel
+
+# opennext
+.open-next/
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+api-worker/node_modules/
+api-worker/.next/
+
+# Wrangler local files
+api-worker/.dev.vars
+api-worker/.wrangler/
+.wrangler/
+
+# env files
+.env
+.env.local
+.env*.local
+
+# logs
+*.log
+next-dev.log
+
+# api-worker data
+api-worker/data/
+api-worker/dist/
+
+# local sqlite database (created by seed:local)
+/data/
+
+.tmp-pkgs/
+
+# local IDE / test artifacts
+.claude/
+test-results/

@@ -1,0 +1,435 @@
+/* Updated: 2025-09-30T19:27:57.992Z */
+/* Updated: 2025-09-30T19:25:22.255Z */
+/* Updated: 2025-09-30T19:17:42.336Z */
+/* Updated: 2025-09-30T19:17:40.876Z */
+/* Updated: 2025-09-30T18:56:35.256Z */
+/* Updated: 2025-09-30T18:56:30.379Z */
+/* Updated: 2025-09-30T18:40:38.199Z */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+/* Scan CRM package utilities (node_modules is excluded from Tailwind's default detection). */
+@source "../../node_modules/@adelfeyz/ui/src";
+@custom-variant dark (&:is(.dark *));
+@font-face {
+  font-family: font-1;
+  font-style: normal;
+  font-weight: 300;
+  src: url('./../../public//SacrificeDemo-8Ox1B.ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IRANSansWeb';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/IRANSansWeb_Medium.eot');
+  font-display: swap;
+}
+@theme {
+  /* Shadcn/UI Colors */
+  --color-background: #ffffff;
+  --color-foreground: #1a1a1a; /* Adjusted to Charcoal Black */
+
+  --color-card: #ffffff;
+  --color-card-foreground: #1a1a1a;
+
+  --color-popover: #ffffff;
+  --color-popover-foreground: #1a1a1a;
+
+  --color-primary: #7A9B3A; /* Primary Green */
+  --color-primary-foreground: #ffffff;
+  
+  /* Primary color scale for gradients */
+  --color-primary-50: #f7f9f3;
+  --color-primary-100: #eef2e6;
+  --color-primary-200: #dde5cc;
+  --color-primary-300: #c2d1a3;
+  --color-primary-400: #a6bd7a;
+  --color-primary-500: #8ba851;
+  --color-primary-600: #7A9B3A; /* Main primary */
+  --color-primary-700: #6b8a32;
+  --color-primary-800: #5c792a;
+  --color-primary-900: #4d6822;
+  --color-primary-950: #3e571a;
+
+  --color-secondary: #E8D5B7; /* Warm Beige */
+  --color-secondary-foreground: #1a1a1a;
+
+  --color-muted: #F0F0F0; /* Lighter neutral for muted elements */
+  --color-muted-foreground: #737373;
+
+  --color-accent: #85C5DB; /* Light Blue */
+  --color-accent-foreground: #1a1a1a;
+
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #fafafa;
+
+  --color-border: #e5e5e5;
+  --color-input: #e5e5e5;
+  --color-ring: #7A9B3A; /* Ring color to match primary */
+
+  --color-chart-1: #e67e22;
+  --color-chart-2: #2d8659;
+  --color-chart-3: #1e3a5f;
+  --color-chart-4: #f1c40f;
+  --color-chart-5: #e74c3c;
+
+  --color-sidebar: #f7f7f7;
+  --color-sidebar-foreground: #404040;
+  --color-sidebar-primary: #1a1a1a;
+  --color-sidebar-primary-foreground: #fafafa;
+  --color-sidebar-accent: #f0f0f0;
+  --color-sidebar-accent-foreground: #1a1a1a;
+  --color-sidebar-border: #d4d4d8;
+  --color-sidebar-ring: #3b82f6;
+
+  /* Custom Design System Colors */
+  --color-light-blue: #85C5DB;
+  --color-medium-blue: #6BA3C0;
+  --color-warm-beige: #E8D5B7;
+  --color-charcoal-black: #1A1A1A;
+  --color-overlay-dark: #00000099; /* rgba(0,0,0,0.6) converted to hex with alpha */
+  --color-overlay-light: #ffffffcc; /* rgba(255,255,255,0.8) for light overlay */
+
+  /* Typography */
+  --font-heading: 'IRANSansWeb', sans-serif;
+  --font-heading-script: "Great Vibes", cursive;
+  --font-body-sans: 'IRANSansWeb', sans-serif;
+
+  /* Shadcn/UI Radii */
+  --radius-lg: 1.875rem; /* Approximately 30px for buttons */
+  --radius-md: calc(1.875rem - 2px);
+  --radius-sm: calc(1.875rem - 4px);
+
+  /* Shadcn/UI Animations */
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-border);
+  }
+}
+
+@layer utilities {
+  /* Custom utility for text overlay on images */
+  .text-overlay-dark {
+    color: var(--color-overlay-dark);
+  }
+}
+
+@layer base {
+  :root {
+    /* Shadcn/UI CSS Variables */
+    --background: var(--color-background);
+    --foreground: var(--color-foreground);
+    --card: var(--color-card);
+    --card-foreground: var(--color-card-foreground);
+    --popover: var(--color-popover);
+    --popover-foreground: var(--color-popover-foreground);
+    --primary: var(--color-primary);
+    --primary-foreground: var(--color-primary-foreground);
+    --secondary: var(--color-secondary);
+    --secondary-foreground: var(--color-secondary-foreground);
+    --muted: var(--color-muted);
+    --muted-foreground: var(--color-muted-foreground);
+    --accent: var(--color-accent);
+    --accent-foreground: var(--color-accent-foreground);
+    --destructive: var(--color-destructive);
+    --destructive-foreground: var(--color-destructive-foreground);
+    --border: var(--color-border);
+    --input: var(--color-input);
+    --ring: var(--color-ring);
+    --chart-1: var(--color-chart-1);
+    --chart-2: var(--color-chart-2);
+    --chart-3: var(--color-chart-3);
+    --chart-4: var(--color-chart-4);
+    --chart-5: var(--color-chart-5);
+    --radius: var(--radius-lg); /* Default radius for Shadcn components */
+    --sidebar-background: var(--color-sidebar);
+    --sidebar-foreground: var(--color-sidebar-foreground);
+    --sidebar-primary: var(--color-sidebar-primary);
+    --sidebar-primary-foreground: var(--color-sidebar-primary-foreground);
+    --sidebar-accent: var(--color-sidebar-accent);
+    --sidebar-accent-foreground: var(--color-sidebar-accent-foreground);
+    --sidebar-border: var(--color-sidebar-border);
+    --sidebar-ring: var(--color-sidebar-ring);
+
+    /* Custom Design System CSS Variables */
+    --color-light-blue: var(--color-light-blue);
+    --color-medium-blue: var(--color-medium-blue);
+    --color-warm-beige: var(--color-warm-beige);
+    --color-charcoal-black: var(--color-charcoal-black);
+    --color-overlay-dark: var(--color-overlay-dark);
+    --color-overlay-light: var(--color-overlay-light);
+  }
+
+  /* Base Typography and HTML Tag Styles */
+  html {
+    scroll-behavior: smooth;
+    direction: rtl;
+  }
+
+  body {
+    font-family: 'IRANSansWeb', sans-serif;
+    color: var(--foreground);
+    background-color: var(--background);
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'IRANSansWeb', sans-serif;
+    line-height: 1.2;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    color: var(--foreground);
+  }
+
+  h1 {
+    font-size: 4rem; /* Example size, adjust as needed */
+  }
+
+  h2 {
+    font-size: 3rem; /* Example size, adjust as needed */
+  }
+
+  h3 {
+    font-size: 2.25rem; /* Example size, adjust as needed */
+  }
+
+  p {
+    margin-bottom: 1em;
+  }
+
+  a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* Container class definition */
+  .container {
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+
+  /* Specific font classes */
+  .font-heading-script {
+    font-family: var(--font-heading-script);
+  }
+
+  .font-body-sans {
+    font-family: var(--font-body-sans);
+  }
+
+  .font-iran-sans {
+    font-family: 'IRANSansWeb', sans-serif;
+    font-weight: 500;
+  }
+
+  .button-text {
+    font-family: 'IRANSansWeb', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600; /* Medium weight */
+  }
+
+  .font-latin {
+    font-family: var(--font-body-sans);
+  }
+}
+
+/* Hide Next.js error overlay portal */
+nextjs-portal {
+  display: none !important;
+}
+
+
+.glossy{
+  background-color:#ffffff5e;
+  backdrop-filter: blur(8px);
+}
+
+.font-1{
+  font-family: "Carattere", cursive;
+  font-weight: 700;
+  font-style: normal;
+}
+.font-2{
+  font-family: "Fjalla One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.transform-end-48{
+  transform:translateX(-48px);
+  height:calc(100% - 48px);
+}
+.transform-end-48 #white-box{
+  width:calc(100% + 24px);
+}
+.transform-start-48{
+  width:calc(100% + 12px);
+  transform:translateX(24px);
+  height:calc(100% - 48px);
+}
+.transform-start-48 #white-box{
+  width:calc(100% + 24px);
+}
+
+[dir="rtl"] .transform-end-48 {
+  transform: translateX(48px);
+}
+
+[dir="rtl"] .transform-start-48 {
+  transform: translateX(-24px);
+}
+
+.r1_iframe_embed {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  padding-top: 56.25%;
+}
+
+.r1_iframe_embed iframe {
+  position: absolute;
+  top: 0;
+  inset-inline-start: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Fix marquee overlay vertical scroll */
+.rfm-overlay {
+  overflow: hidden !important;
+  height: 100% !important;
+}
+
+.rfm-marquee {
+  overflow: hidden !important;
+}
+
+/* Jalali date picker popup */
+.jalali-date-picker .rdp-root {
+  --rdp-accent-color: #10b981;
+  --rdp-accent-background-color: #ecfdf5;
+  --rdp-day-height: 2.75rem;
+  --rdp-day-width: 2.75rem;
+  --rdp-day_button-height: 2.625rem;
+  --rdp-day_button-width: 2.625rem;
+  --rdp-nav-height: 3rem;
+  --rdp-nav_button-height: 2.5rem;
+  --rdp-nav_button-width: 2.5rem;
+  --rdp-weekday-opacity: 1;
+  --rdp-weekday-padding: 0.625rem 0;
+  --rdp-outside-opacity: 0.45;
+  width: 100%;
+  color: #0f172a;
+}
+
+.jalali-date-picker .rdp-months {
+  width: 100%;
+  max-width: none;
+}
+
+.jalali-date-picker .rdp-month {
+  width: 100%;
+}
+
+.jalali-date-picker .rdp-month_caption {
+  height: 3rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.jalali-date-picker .rdp-caption_label {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: #0f172a;
+  line-height: 1.5;
+}
+
+.jalali-date-picker .rdp-weekday {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.jalali-date-picker .rdp-day_button {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.jalali-date-picker .rdp-day_button:hover:not(:disabled) {
+  background-color: #ecfdf5;
+}
+
+.jalali-date-picker .rdp-selected .rdp-day_button {
+  background-color: #10b981;
+  border-color: #10b981;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.jalali-date-picker .rdp-today:not(.rdp-outside) .rdp-day_button {
+  color: #059669;
+  font-weight: 700;
+}
+
+.jalali-date-picker .rdp-disabled .rdp-day_button {
+  color: #cbd5e1;
+}
+
+.jalali-date-picker .rdp-button_previous,
+.jalali-date-picker .rdp-button_next {
+  border-radius: 0.5rem;
+  color: #475569;
+}
+
+.jalali-date-picker .rdp-button_previous:hover:not(:disabled),
+.jalali-date-picker .rdp-button_next:hover:not(:disabled) {
+  background-color: #f1f5f9;
+}
+
+.jalali-date-picker .rdp-month_grid {
+  width: 100%;
+}
