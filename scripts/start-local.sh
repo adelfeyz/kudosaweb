@@ -14,11 +14,11 @@ fi
 
 node scripts/seed-local.js
 
-export PORT=3031
+export PORT=3051
 (cd "$ROOT/api-worker" && npm run start:node) &
 API_PID=$!
 
-export PORT=3030
+export PORT=3050
 npm run dev
 
 kill "$API_PID" 2>/dev/null || true

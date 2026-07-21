@@ -3,7 +3,8 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "next dev --turbopack -p 3030",
+        "dev": "next dev -p 3050",
+        "dev:turbo": "next dev --turbopack -p 3050",
         "dev:api": "node scripts/dev-api.mjs",
         "dev:all": "concurrently \"npm run dev:api\" \"npm run dev\"",
         "start:local": "powershell -ExecutionPolicy Bypass -File scripts/start-local.ps1",

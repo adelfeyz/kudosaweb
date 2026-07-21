@@ -1,5 +1,5 @@
 /**
- * Start @adelfeyz/api for local Kudosa dev (port 3031).
+ * Start @adelfeyz/api for local Kudosa dev (port 3051).
  * Prefers the installed package; falls back to sibling crm-platform for local monorepo work.
  */
 import { spawn } from 'node:child_process';
@@ -25,7 +25,7 @@ function loadEnvFile(filePath) {
 }
 
 loadEnvFile(resolve(root, '.env.local'));
-process.env.PORT = process.env.PORT || '3031';
+process.env.PORT = process.env.PORT || '3051';
 process.env.DB_PATH = resolve(process.env.DB_PATH || resolve(root, 'data', 'database.db'));
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 

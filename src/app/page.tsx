@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { Award, Gamepad2, type LucideIcon, Zap } from 'lucide-react';
 import { getThumbnailUrl } from '@adelfeyz/sdk';
 import { blogAPI, blogUtils } from '@/lib/blog';
 import NewsletterForm from '@/components/newsletter/NewsletterForm';
@@ -8,6 +9,8 @@ import ContactTabs from '@/components/ContactTabs';
 import SiteFooter from '@/components/SiteFooter';
 import FAQSection from '@/components/seo/FAQSection';
 import KudosaMotivationTabs from '@/components/kudosa/KudosaMotivationTabs';
+import KudosaProgressBars from '@/components/kudosa/KudosaProgressBars';
+import KudosaSurveyStats from '@/components/kudosa/KudosaSurveyStats';
 import {
   APP_LOGIN_URL,
   SITE_DESCRIPTION,
@@ -29,6 +32,12 @@ import {
   surveyStats,
   valueProps,
 } from '@/content/kudosa-home';
+
+const valuePropIcons: Record<(typeof valueProps)[number]['icon'], LucideIcon> = {
+  Gamepad2,
+  Zap,
+  Award,
+};
 
 export const dynamic = 'force-dynamic';
 
@@ -120,15 +129,21 @@ export default async function HomePage() {
       <section className="py-20 bg-slate-50 border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-8">
-            {valueProps.map(({ title, description }) => (
-              <article
-                key={title}
-                className="rounded-2xl bg-white border border-slate-200 p-8 shadow-sm hover:shadow-md transition-shadow"
-              >
-                <h3 className="text-xl font-semibold text-slate-900 mb-3 leading-snug">{title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{description}</p>
-              </article>
-            ))}
+            {valueProps.map(({ icon, title, description }) => {
+              const Icon = valuePropIcons[icon];
+              return (
+                <article
+                  key={title}
+                  className="rounded-2xl bg-white border border-slate-200 p-8 shadow-sm hover:shadow-md transition-shadow"
+                >
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <Icon className="h-6 w-6" aria-hidden />
+                  </div>
+                  <h3 className="text-xl font-semibold text-slate-900 mb-3 leading-snug">{title}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">{description}</p>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -200,38 +215,36 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Survey stats */}
-      <section className="py-20 bg-indigo-50 border-y border-indigo-100">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {surveyStats.map((stat) => (
-              <div
-                key={stat}
-                className="rounded-xl bg-white border border-indigo-100 p-5 text-sm text-slate-700 leading-relaxed shadow-sm"
-              >
-                {stat}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Survey stats — circular progress like kudosa.ir */}
+      <KudosaSurveyStats stats={surveyStats} />
 
-      {/* How to start */}
+      {/* How to start — two-column like kudosa.ir */}
       <section id="how-to-start" className="py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-3xl sm:text-4xl font-semibold text-slate-900 mb-12 text-center leading-tight">
-            {startSteps.title}
-          </h2>
-          <ol className="space-y-5">
-            {startSteps.steps.map((step, index) => (
-              <li key={step.slice(0, 36)} className="flex gap-4 items-start">
-                <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-bold">
-                  {index + 1}
-                </span>
-                <p className="text-slate-700 leading-relaxed pt-1.5">{step}</p>
-              </li>
-            ))}
-          </ol>
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl sm:text-4xl font-semibold text-slate-900 mb-10 leading-tight">
+                {startSteps.title}
+              </h2>
+              <ol className="space-y-5">
+                {startSteps.steps.map((step, index) => (
+                  <li key={step.slice(0, 36)} className="flex gap-4 items-start">
+                    <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-bold">
+                      {index + 1}
+                    </span>
+                    <p className="text-slate-700 leading-relaxed pt-1.5">{step}</p>
+                  </li>
+                ))}
+              </ol>
+            </div>
+            <div className="flex justify-center lg:justify-end">
+              <img
+                src={startSteps.image}
+                alt="نمای اپلیکیشن کادوسا"
+                className="w-full h-auto object-contain"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -242,37 +255,29 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Culture */}
-      <section className="py-20 bg-white">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-2xl sm:text-3xl font-semibold text-slate-900 mb-6 leading-tight">
-            {culture.title}
-          </h2>
-          <p className="text-slate-600 leading-relaxed">{culture.description}</p>
-        </div>
-      </section>
-
-      {/* Performance factors */}
-      <section className="py-24 bg-slate-50 border-t border-slate-100">
+      {/* Culture + performance factors — two-column like kudosa.ir */}
+      <section className="py-24 bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-semibold text-slate-900 mb-10 text-center leading-tight">
-            {performanceFactors.title}
-          </h2>
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
-            {performanceFactors.items.map(({ title }) => (
-              <span
-                key={title}
-                className="px-5 py-2 rounded-full bg-white border border-slate-200 text-slate-800 text-sm font-medium shadow-sm"
-              >
-                {title}
-              </span>
-            ))}
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <h2 className="text-2xl sm:text-3xl font-semibold text-slate-900 mb-6 leading-tight">
+                {culture.title}
+              </h2>
+              <p className="text-slate-600 leading-relaxed text-justify">{culture.description}</p>
+            </div>
+            <div>
+              <h2 className="text-2xl sm:text-3xl font-semibold text-slate-900 mb-8 leading-tight">
+                {performanceFactors.title}
+              </h2>
+              <KudosaProgressBars items={performanceFactors.items} />
+            </div>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+
+          <div className="grid md:grid-cols-3 gap-6 mt-16 pt-16 border-t border-slate-100">
             {performanceFactors.detailCards.map(({ title, description }) => (
               <article
                 key={title}
-                className="rounded-2xl bg-white border border-slate-200 p-6 shadow-sm"
+                className="rounded-2xl bg-slate-50 border border-slate-200 p-6"
               >
                 <h3 className="text-lg font-semibold text-slate-900 mb-3">{title}</h3>
                 <p className="text-sm text-slate-600 leading-relaxed">{description}</p>

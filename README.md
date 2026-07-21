@@ -49,8 +49,8 @@ This creates `data/database.db` and seeds the default admin user. No `sqlite3` C
 npm run dev:all
 ```
 
-- Web: http://localhost:3030
-- API: http://localhost:3031
+- Web: http://localhost:3050
+- API: http://localhost:3051
 
 Or use the PowerShell helper:
 
@@ -62,8 +62,8 @@ npm run start:local
 
 | Script | Description |
 |--------|-------------|
-| `npm run dev` | Next.js on port 3030 |
-| `npm run dev:api` | API server on port 3031 |
+| `npm run dev` | Next.js on port 3050 |
+| `npm run dev:api` | API server on port 3051 |
 | `npm run dev:all` | Web + API together |
 | `npm run build` | Production build |
 | `npm run check:brand` | Guard against legacy brand strings |

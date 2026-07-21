@@ -6,8 +6,9 @@ CRM lives only in **crm-platform** and ships as private GitHub Packages under `@
 |------|-----------|-----------|--------|
 | [Pointer](./POINTER.md) | `3020` | `3021` | Consumer on `feat/use-crm-packages` |
 | [Raveshmand](./RAVESHMAND.md) | `3010` | `3011` | Migrate from inlined `api-worker` / `src/app/crm` |
-| Kudosa | `3030` | `3031` | This repo |
+| Hadafsanj | `3030` | `3031` | Sibling consumer |
 | crm-platform | `3040` | `3041` | Package source |
+| Kudosa | `3050` | `3051` | This repo |
 
 Shared install/update/PM2 details: [../deployment/CRM-PACKAGE-DEPLOY.md](../deployment/CRM-PACKAGE-DEPLOY.md).
 

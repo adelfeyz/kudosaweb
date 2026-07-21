@@ -9,8 +9,8 @@ param(
 $ErrorActionPreference = "Stop"
 
 $Root = Split-Path -Parent $PSScriptRoot
-$FrontPort = 3030
-$BackPort = 3031
+$FrontPort = 3050
+$BackPort = 3051
 $ProjectPathPattern = [regex]::Escape($Root)
 
 Set-Location $Root
@@ -142,7 +142,7 @@ function Start-PointerFrontend {
     }
 
     Write-PointerLog "Starting frontend on http://localhost:$FrontPort"
-    # Next is pinned with -p 3030 in package.json; still clear PORT so it cannot leak into child tools.
+    # Next is pinned with -p 3050 in package.json; still clear PORT so it cannot leak into child tools.
     Start-Process powershell -ArgumentList @(
         '-NoExit',
         '-Command',
