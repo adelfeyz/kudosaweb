@@ -24,7 +24,7 @@ export default function NewsletterForm({
   variant = 'default',
   showTitle = true,
   title = 'می‌خواهید از جدیدترین مطالب و بینش‌های ما باخبر شوید؟',
-  description = 'در خبرنامه روشمند عضو شوید و جدیدترین مقالات، نکات کاربردی و محتوای اختصاصی را هفتگی دریافت کنید.',
+  description = 'در خبرنامه کادوسا عضو شوید و جدیدترین مقالات، نکات کاربردی و محتوای اختصاصی را هفتگی دریافت کنید.',
   className = '',
   emailLabel = 'آدرس ایمیل',
   emailPlaceholder = 'ایمیل خود را وارد کنید',

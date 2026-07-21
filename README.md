@@ -1,16 +1,20 @@
-# Raveshmand
+# Kudosa
 
-A full-stack web application built with Next.js 15 and a Node.js API server.
+Marketing site and CRM for **کادوسا (Kudosa)** — a gamification platform for team performance improvement.
+
+Built with Next.js 15 and a Node.js API server.
 
 ## Project Overview
 
-Raveshmand includes a customer-facing website and a built-in admin CRM dashboard featuring:
+Kudosa includes a customer-facing website and a built-in admin CRM dashboard featuring:
 - **Next.js 15** with App Router and Turbopack
 - **React 19** + **TypeScript 5**
 - **Tailwind CSS 4**
 - **Hono** API on Node.js
 - **SQLite** database
 - **JWT magic-link** authentication for CRM
+
+Production domain: [https://kudosa.ir/](https://kudosa.ir/)
 
 ## Prerequisites
 
@@ -39,114 +43,31 @@ This creates `data/database.db` and seeds the default admin user. No `sqlite3` C
 
 **Windows note:** `better-sqlite3` needs MSVC build tools. If `npm install` fails in `api-worker`, use Docker instead.
 
-### 3. Start both services
-
-**Option A — convenience script:**
+### 3. Start the app
 
 ```powershell
-.\scripts\start-local.ps1
-```
-
-**Option B — two terminals:**
-
-```powershell
-# Terminal 1 — API (port 3021)
-cd api-worker
-npm install
-$env:PORT='3021'; npm run start:node
-
-# Terminal 2 — Frontend (port 3020)
-cd ..
-npm install
-npm run dev
-```
-
-**Option C — single command:**
-
-```powershell
-npm install
-cd api-worker && npm install && cd ..
 npm run dev:all
 ```
 
-- Frontend: [http://localhost:3020](http://localhost:3020)
-- API: [http://localhost:3021](http://localhost:3021)
+- Web: http://localhost:3030
+- API: http://localhost:3031
 
-### CRM login
-
-Go to [http://localhost:3020/login](http://localhost:3020/login):
-
-| Method | Details |
-|--------|---------|
-| **Password** | Username: `admin` — Password: value of `ADMIN_PASSWORD` in `.env.local` (default: `admin`) |
-| **Magic link** | Use the Magic Link tab; without `BREVO_API_KEY`, the link is printed in the API server console |
-
-Ensure `.env.local` includes `ADMIN_PASSWORD=admin` (included in `.env.example`).
-
-### Build
-
-```bash
-npm run build       # Next.js production build (standalone)
-npm run start       # Production server
-npm run lint        # ESLint
-```
-
-## Docker Production
+Or use the PowerShell helper:
 
 ```powershell
-cd docker
-copy .env.example .env
-# Edit .env — set JWT_SECRET and SITE_URL
-docker compose up -d --build
+npm run start:local
 ```
 
-- Website: port **3000**
-- API: port **3001**
-- SQLite persisted in Docker volume `pointer-db-data`
-- Uploads persisted in Docker volume `pointer-uploads-data`
+## Scripts
 
-## Project Structure
+| Script | Description |
+|--------|-------------|
+| `npm run dev` | Next.js on port 3030 |
+| `npm run dev:api` | API server on port 3031 |
+| `npm run dev:all` | Web + API together |
+| `npm run build` | Production build |
+| `npm run check:brand` | Guard against legacy brand strings |
 
-```
-raveshmand/
-├── api-worker/          # Hono API (Node.js)
-│   ├── app.ts           # Hono app setup
-│   ├── index.ts         # Request handlers
-│   ├── server.ts        # Node.js entry point
-│   └── lib/             # API utilities
-├── database/            # SQLite schema and seeds
-├── docker/              # Docker configuration
-├── scripts/             # Utility scripts
-└── src/
-    ├── app/             # Next.js App Router pages
-    │   └── crm/         # Admin CRM dashboard
-    ├── components/      # React components
-    └── lib/             # Utilities and services
-```
+## Repository
 
-## Environment Variables
-
-See [`.env.example`](.env.example) for the full local dev template.
-
-| Variable | Required | Description |
-|---|---|---|
-| `NEXT_PUBLIC_API_BASE_URL` | Yes | API URL (default `http://localhost:3021`) |
-| `NEXT_PUBLIC_SITE_URL` | Yes | Site URL (default `http://localhost:3020`) |
-| `JWT_SECRET` | Yes | Secret for admin JWT tokens |
-| `ADMIN_PASSWORD` | Yes (local) | CRM password for username `admin` (default `admin`) |
-| `DB_PATH` | No | SQLite path (default `../data/database.db` from api-worker) |
-| `BREVO_API_KEY` | No | Transactional email (magic links, forms) |
-| `OPENAI_API_KEY` | No | AI blog assistant |
-| `OPENROUTER_API_KEY` | No | AI model routing |
-
-## Security
-
-- JWT magic-link authentication for CRM
-- API key authentication for external blog API
-- Rate limiting
-- CORS protection
-- Input validation with Zod
-
-## License
-
-Private project — All rights reserved
+https://github.com/adelfeyz/kudosaweb

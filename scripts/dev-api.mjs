@@ -1,5 +1,5 @@
 /**
- * Start @adelfeyz/api for local Pointer dev (port 3021).
+ * Start @adelfeyz/api for local Kudosa dev (port 3031).
  * Prefers the installed package; falls back to sibling crm-platform for local monorepo work.
  */
 import { spawn } from 'node:child_process';
@@ -25,11 +25,38 @@ function loadEnvFile(filePath) {
 }
 
 loadEnvFile(resolve(root, '.env.local'));
-process.env.PORT = process.env.PORT || '3021';
+process.env.PORT = process.env.PORT || '3031';
 process.env.DB_PATH = resolve(process.env.DB_PATH || resolve(root, 'data', 'database.db'));
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 function resolveApiEntry() {
+  // Prefer sibling crm-platform during local monorepo work so API fixes apply without republishing.
+  const siblingApi = resolve(root, '../crm-platform/packages/api');
+  const siblingServer = resolve(siblingApi, 'server.ts');
+  if (existsSync(siblingServer)) {
+    const tsxCli = resolve(siblingApi, 'node_modules/tsx/dist/cli.mjs');
+    const rootTsx = (() => {
+      try {
+        return require.resolve('tsx/dist/cli.mjs');
+      } catch {
+        return null;
+      }
+    })();
+    const tsxPath = existsSync(tsxCli) ? tsxCli : rootTsx;
+    if (tsxPath) {
+      return {
+        command: process.execPath,
+        args: [tsxPath, 'watch', 'server.ts'],
+        cwd: siblingApi,
+      };
+    }
+    return {
+      command: 'npx',
+      args: ['tsx', 'watch', 'server.ts'],
+      cwd: siblingApi,
+    };
+  }
+
   try {
     const pkgJson = require.resolve('@adelfeyz/api/package.json');
     const pkgDir = dirname(pkgJson);
@@ -47,18 +74,6 @@ function resolveApiEntry() {
     }
   } catch {
     // fall through
-  }
-
-  const siblingApi = resolve(root, '../crm-platform/packages/api');
-  const tsxCli = resolve(siblingApi, 'node_modules/tsx/dist/cli.mjs');
-  if (existsSync(resolve(siblingApi, 'server.ts'))) {
-    return {
-      command: existsSync(tsxCli) ? process.execPath : 'npx',
-      args: existsSync(tsxCli)
-        ? [tsxCli, 'watch', 'server.ts']
-        : ['tsx', 'watch', 'server.ts'],
-      cwd: siblingApi,
-    };
   }
 
   throw new Error(

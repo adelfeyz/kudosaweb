@@ -6,15 +6,15 @@ const TeamSection = () => {
     <BoxImage
       image={{
         src: "/Strategic_planning_AI-Agent.jpg",
-        alt: "دستیار هوش مصنوعی برنامه ریزی در پوینتر"
+        alt: "دستیار هوش مصنوعی برنامه ریزی در کادوسا"
       }}
       box={(
           <WhiteBox
-            header="دستیار هوش مصنوعی برنامه ریزی در پوینتر"
+            header="دستیار هوش مصنوعی برنامه ریزی در کادوسا"
             body={(
               <div className="space-y-6 text-end">
                 <p className="font-iran-sans text-lg leading-relaxed mb-4">
-                  <strong>دستیار هوش مصنوعی برنامه‌ریزی Pointer</strong> به شما کمک می‌کند OKRها را هوشمندانه و سریع‌تر تعریف و مدیریت کنید.
+                  <strong>دستیار هوش مصنوعی برنامه‌ریزی Kudosa</strong> به شما کمک می‌کند OKRها را هوشمندانه و سریع‌تر تعریف و مدیریت کنید.
                 </p>
                 
                 <ul className="space-y-4 font-iran-sans text-base leading-relaxed">

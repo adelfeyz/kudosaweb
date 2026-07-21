@@ -15,15 +15,15 @@ const lastUpdated = new Date().toLocaleDateString('fa-IR', {
 export const metadata: Metadata = {
   title: 'سیاست حریم خصوصی',
   description:
-    'سیاست حریم خصوصی روشمند — نحوه جمع‌آوری، استفاده، نگهداری و حفاظت از اطلاعات شخصی شما در وب‌سایت و خدمات ما.',
-  keywords: ['حریم خصوصی', 'روشمند', 'حفاظت از داده', 'privacy policy'],
+    'سیاست حریم خصوصی کادوسا — نحوه جمع‌آوری، استفاده، نگهداری و حفاظت از اطلاعات شخصی شما در وب‌سایت و خدمات ما.',
+  keywords: ['حریم خصوصی', 'کادوسا', 'حفاظت از داده', 'privacy policy'],
   alternates: {
     canonical: '/privacy-policy',
   },
   openGraph: {
-    title: 'سیاست حریم خصوصی | روشمند',
+    title: 'سیاست حریم خصوصی | کادوسا',
     description:
-      'بیاموزید روشمند چگونه اطلاعات شخصی شما را در وب‌سایت، فرم‌های تماس، خبرنامه و خدمات مشاوره هوش مصنوعی جمع‌آوری و محافظت می‌کند.',
+      'بیاموزید کادوسا چگونه اطلاعات شخصی شما را در وب‌سایت، فرم‌های تماس، خبرنامه و خدمات مشاوره هوش مصنوعی جمع‌آوری و محافظت می‌کند.',
     url: `${siteUrl}/privacy-policy`,
     type: 'website',
     locale: 'fa_IR',
@@ -47,7 +47,7 @@ export default function PrivacyPolicyPage() {
       <main className="min-h-screen bg-slate-50 pt-24 pb-16">
         <div className="max-w-4xl mx-auto px-6">
           <div className="mb-10">
-            <p className="text-sm text-emerald-600 font-medium mb-2">روشمند</p>
+            <p className="text-sm text-emerald-600 font-medium mb-2">کادوسا</p>
             <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
               سیاست حریم خصوصی
             </h1>
@@ -60,7 +60,7 @@ export default function PrivacyPolicyPage() {
             <section>
               <h2 className="text-xl font-semibold text-slate-900 mb-3">۱. مقدمه</h2>
               <p>
-                شرکت <strong>روشمند</strong> («ما») متعهد است حریم خصوصی بازدیدکنندگان وب‌سایت و
+                شرکت <strong>کادوسا</strong> («ما») متعهد است حریم خصوصی بازدیدکنندگان وب‌سایت و
                 استفاده‌کنندگان از خدمات مشاوره، محصولات و پلتفرم‌های ما را حفظ کند. این سیاست
                 توضیح می‌دهد چه اطلاعاتی جمع‌آوری می‌کنیم، چرا از آن استفاده می‌کنیم، با چه کسانی
                 به اشتراک می‌گذاریم و چه حقوقی در ارتباط با داده‌های شخصی خود دارید.
@@ -68,7 +68,7 @@ export default function PrivacyPolicyPage() {
               <p className="mt-3">
                 با استفاده از وب‌سایت{' '}
                 <Link href="/" className="text-emerald-600 hover:underline">
-                  raveshmand.com
+                  kudosa.ir
                 </Link>{' '}
                 یا ارسال اطلاعات از طریق فرم‌های تماس، درخواست دمو، خبرنامه و سایر بخش‌ها، شما با
                 مفاد این سیاست موافقت می‌کنید.
@@ -79,13 +79,13 @@ export default function PrivacyPolicyPage() {
               <h2 className="text-xl font-semibold text-slate-900 mb-3">۲. دامنه این سیاست</h2>
               <p>این سیاست شامل موارد زیر است:</p>
               <ul className="list-disc ps-6 space-y-2 mt-3">
-                <li>وب‌سایت رسمی روشمند و صفحات مرتبط (وبلاگ، مطالعات موردی، صفحات محصول)</li>
+                <li>وب‌سایت رسمی کادوسا و صفحات مرتبط (وبلاگ، مطالعات موردی، صفحات محصول)</li>
                 <li>فرم‌های تماس، درخواست مشاوره، درخواست دمو و عضویت در خبرنامه</li>
                 <li>پنل مدیریت داخلی (CRM) برای کاربران مجاز سازمان</li>
-                <li>خدمات مشاوره، طراحی و استقرار راهکارهای هوش مصنوعی که توسط روشمند ارائه می‌شود</li>
+                <li>خدمات مشاوره، طراحی و استقرار راهکارهای هوش مصنوعی که توسط کادوسا ارائه می‌شود</li>
               </ul>
               <p className="mt-3 text-sm text-slate-500">
-                وب‌سایت‌ها یا محصولات مستقل مشتریان (مانند پلتفرم‌هایی که روشمند در توسعه آن‌ها
+                وب‌سایت‌ها یا محصولات مستقل مشتریان (مانند پلتفرم‌هایی که کادوسا در توسعه آن‌ها
                 نقش داشته) ممکن است سیاست حریم خصوصی جداگانه داشته باشند.
               </p>
             </section>
@@ -117,10 +117,10 @@ export default function PrivacyPolicyPage() {
               <ul className="list-disc ps-6 space-y-2">
                 <li>پاسخ به درخواست تماس، دمو و مشاوره</li>
                 <li>ارسال ایمیل تأیید خبرنامه و به‌روزرسانی‌های درخواست‌شده</li>
-                <li>ارائه، بهبود و پشتیبانی از خدمات و محصولات روشمند</li>
+                <li>ارائه، بهبود و پشتیبانی از خدمات و محصولات کادوسا</li>
                 <li>مدیریت امنیت وب‌سایت، جلوگیری از سوءاستفاده و محدودسازی نرخ درخواست (rate limiting)</li>
                 <li>تحلیل عملکرد وب‌سایت و بهبود تجربه کاربری</li>
-                <li>رعایت الزامات قانونی و حفاظت از حقوق روشمند و کاربران</li>
+                <li>رعایت الزامات قانونی و حفاظت از حقوق کادوسا و کاربران</li>
               </ul>
             </section>
 
@@ -129,7 +129,7 @@ export default function PrivacyPolicyPage() {
               <p>
                 پردازش داده‌های شخصی شما بر اساس یک یا چند مورد زیر انجام می‌شود: رضایت شما (مثلاً
                 عضویت در خبرنامه)، اجرای درخواست یا قرارداد (مثلاً پاسخ به فرم تماس)، منافع
-                مشروع روشمند (مانند امنیت و بهبود خدمات) یا رعایت تعهدات قانونی.
+                مشروع کادوسا (مانند امنیت و بهبود خدمات) یا رعایت تعهدات قانونی.
               </p>
             </section>
 
@@ -149,7 +149,7 @@ export default function PrivacyPolicyPage() {
                 </li>
                 <li>
                   <strong>حفاظت از حقوق:</strong> برای جلوگیری از کلاهبرداری، سوءاستفاده یا آسیب
-                  به روشمند، کاربران یا عموم
+                  به کادوسا، کاربران یا عموم
                 </li>
                 <li>
                   <strong>انتقال تجاری:</strong> در صورت ادغام، خرید یا واگذاری دارایی‌ها — با
@@ -238,12 +238,12 @@ export default function PrivacyPolicyPage() {
               </p>
               <div className="rounded-xl bg-slate-50 border border-slate-200 p-5 space-y-2 text-sm">
                 <p>
-                  <strong className="text-slate-900">روشمند</strong>
+                  <strong className="text-slate-900">کادوسا</strong>
                 </p>
                 <p>
                   ایمیل:{' '}
-                  <a href="mailto:info@raveshmand.com" className="text-emerald-600 hover:underline">
-                    info@raveshmand.com
+                  <a href="mailto:info@kudosa.ir" className="text-emerald-600 hover:underline">
+                    info@kudosa.ir
                   </a>
                 </p>
                 <p>

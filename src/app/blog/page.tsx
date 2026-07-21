@@ -10,14 +10,14 @@ import { generateBlogSchema, generateBreadcrumbSchema } from '@/lib/seo';
 import { config } from '@/lib/config';
 
 export const metadata: Metadata = {
-	title: 'وبلاگ - روشمند',
-	description: 'بینش‌ها، روندها و داستان‌های تحول با هوش مصنوعی از روشمند. راهنمای عملی برای پذیرش و پیاده‌سازی هوش مصنوعی.',
+	title: 'وبلاگ - کادوسا',
+	description: 'مطالب بازی‌وارسازی، انگیزه تیمی و بهبود عملکرد از کادوسا.',
 	alternates: {
 		canonical: '/blog',
 	},
 	openGraph: {
-		title: 'وبلاگ - روشمند',
-		description: 'بینش‌ها، روندها و داستان‌های تحول با هوش مصنوعی از روشمند. راهنمای عملی برای پذیرش و پیاده‌سازی هوش مصنوعی.',
+		title: 'وبلاگ - کادوسا',
+		description: 'مطالب بازی‌وارسازی، انگیزه تیمی و بهبود عملکرد از کادوسا.',
 		url: `${config.siteUrl}/blog`,
 		type: 'website',
 		locale: 'fa_IR',
@@ -144,7 +144,7 @@ async function BlogContent() {
 							مطالب و بینش‌ها
 						</div>
 						<h1 className="text-4xl md:text-5xl font-semibold text-white leading-tight mb-6">
-							وبلاگ روشمند
+							وبلاگ کادوسا
 						</h1>
 						<p className="text-xl text-white/90 font-medium mb-8">
 							راهنمای عملی برای پذیرش هوش مصنوعی و پیاده‌سازی آن در سازمان

@@ -24,7 +24,7 @@ function ConfirmInner() {
       .then((data) => {
         if (data.success) {
           setStatus('success');
-          setMessage('Your subscription has been confirmed. Welcome to the روشمند newsletter!');
+          setMessage('Your subscription has been confirmed. Welcome to the کادوسا newsletter!');
         } else {
           setStatus('error');
           setMessage(data.error || 'This confirmation link is invalid or has expired.');

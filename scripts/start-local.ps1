@@ -1,4 +1,4 @@
-# Start / stop / restart Pointer locally (API + frontend)
+# Start / stop / restart Kudosa locally (API + frontend)
 param(
     [switch]$Restart,
     [switch]$RestartBack,
@@ -9,15 +9,15 @@ param(
 $ErrorActionPreference = "Stop"
 
 $Root = Split-Path -Parent $PSScriptRoot
-$FrontPort = 3020
-$BackPort = 3021
+$FrontPort = 3030
+$BackPort = 3031
 $ProjectPathPattern = [regex]::Escape($Root)
 
 Set-Location $Root
 
 function Write-PointerLog {
     param([string]$Message)
-    Write-Host "[pointer] $Message"
+    Write-Host "[kudosa] $Message"
 }
 
 function Stop-ProcessesOnPort {
@@ -125,7 +125,7 @@ function Start-PointerBackend {
     }
 
     Write-PointerLog "Starting backend on http://localhost:$BackPort"
-    # Force Pointer ports — do not inherit PORT=3020 from a prior Next session.
+    # Force Kudosa ports — do not inherit PORT from a prior Next session.
     Start-Process powershell -ArgumentList @(
         '-NoExit',
         '-Command',
@@ -142,7 +142,7 @@ function Start-PointerFrontend {
     }
 
     Write-PointerLog "Starting frontend on http://localhost:$FrontPort"
-    # Next is pinned with -p 3020 in package.json; still clear PORT so it cannot leak into child tools.
+    # Next is pinned with -p 3030 in package.json; still clear PORT so it cannot leak into child tools.
     Start-Process powershell -ArgumentList @(
         '-NoExit',
         '-Command',
@@ -162,7 +162,7 @@ Ensure-PointerSetup
 
 if ($Stop) {
     Stop-PointerServices -Target All
-    Write-PointerLog "Stopped Pointer backend and frontend."
+    Write-PointerLog "Stopped Kudosa backend and frontend."
     Show-PointerStatus
     exit 0
 }
@@ -194,5 +194,5 @@ if ($Restart) {
 
 Start-PointerBackend
 Start-PointerFrontend
-Write-PointerLog "Pointer services started."
+Write-PointerLog "Kudosa services started."
 Show-PointerStatus

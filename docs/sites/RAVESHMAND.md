@@ -176,6 +176,7 @@ pnpm update @adelfeyz/ui @adelfeyz/sdk @adelfeyz/api
 |------|-----|-----|
 | raveshmand | 3010 | 3011 |
 | pointer | 3020 | 3021 |
+| kudosa | 3030 | 3031 |
 | crm-platform | 3040 | 3041 |
 
 ## Rules of engagement

@@ -46,14 +46,15 @@ export const generateOrganizationSchema = () => {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'روشمند',
+    name: 'کادوسا',
     url: siteUrl,
     logo: `${siteUrl}/logo.png`,
-    description: 'روشمند builds intelligent AI-powered products and platforms that transform how businesses operate.',
+    description:
+      'پلتفرم کادوسا، ابزار بازی‌وارسازی برای ارتقای افراد و تیم‌ها و بهبود عملکرد سازمانی.',
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'Customer Service',
-      availableLanguage: 'English',
+      availableLanguage: 'Persian',
     },
     sameAs: [],
   };
@@ -66,7 +67,7 @@ export const generateLocalBusinessSchema = () => {
   return {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
-    name: 'روشمند',
+    name: 'کادوسا',
     image: `${siteUrl}/logo.png`,
     '@id': siteUrl,
     url: siteUrl,
@@ -178,7 +179,7 @@ export const generateServiceSchema = (serviceName: string, description: string, 
     description: description,
     provider: {
       '@type': 'Organization',
-      name: 'روشمند',
+      name: 'کادوسا',
       url: siteUrl,
     },
     url: getCanonicalUrl(serviceUrl),
@@ -206,12 +207,12 @@ export const generateBlogSchema = () => {
   return {
     '@context': 'https://schema.org',
     '@type': 'Blog',
-    name: 'وبلاگ روشمند',
-    description: 'AI insights, technology trends, and transformation stories from روشمند',
+    name: 'وبلاگ کادوسا',
+    description: 'مطالب بازی‌وارسازی، انگیزه تیمی و بهبود عملکرد از کادوسا',
     url: getCanonicalUrl('/blog'),
     publisher: {
       '@type': 'Organization',
-      name: 'روشمند',
+      name: 'کادوسا',
       logo: {
         '@type': 'ImageObject',
         url: `${siteUrl}/logo.png`,
@@ -227,7 +228,7 @@ export const generateCollectionPageSchema = (categoryName: string, categoryUrl: 
   return {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: `${categoryName} - Pointer Blog`,
+    name: `${categoryName} - وبلاگ کادوسا`,
     url: getCanonicalUrl(categoryUrl),
     ...(itemCount !== undefined && {
       numberOfItems: itemCount,
@@ -280,7 +281,7 @@ export const generateReviewSchema = (reviews: ReviewItem[]) => {
   return {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    name: 'Pointer',
+    name: 'کادوسا',
     aggregateRating: reviews.length > 0 && reviews.some(r => r.rating) ? {
       '@type': 'AggregateRating',
       ratingValue: reviews

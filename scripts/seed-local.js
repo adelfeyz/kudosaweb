@@ -89,7 +89,7 @@ function main() {
   db.close();
 
   const env = loadEnvLocal();
-  const siteUrl = env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3020';
+  const siteUrl = env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3030';
   const adminPassword = env.ADMIN_PASSWORD || 'admin';
 
   console.log('');

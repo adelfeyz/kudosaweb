@@ -29,13 +29,13 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   
   if (!post) {
     return {
-      title: 'Post Not Found - روشمند',
+      title: 'Post Not Found - کادوسا',
       description: 'The requested blog post could not be found.'
     };
   }
 
   return {
-    title: post.seo_title || `${post.title} - روشمند`,
+    title: post.seo_title || `${post.title} - کادوسا`,
     description: post.seo_description || post.excerpt || blogUtils.getExcerpt(post.content, 160),
     keywords: post.meta_keywords,
     openGraph: {

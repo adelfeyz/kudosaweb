@@ -26,7 +26,7 @@ const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
   async rewrites() {
-    const apiBase = (process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3021').replace(
+    const apiBase = (process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3031').replace(
       /\/$/,
       ''
     );
@@ -39,26 +39,12 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      {
-        source: '/services/all-on-4',
-        destination: '/all-on-4',
-        permanent: true,
-      },
-      {
-        source: '/palo-alto-dentist',
-        destination: '/contact',
-        permanent: true,
-      },
-      {
-        source: '/icreate-smiles',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/mips',
-        destination: '/',
-        permanent: true,
-      },
+      { source: '/pointer', destination: '/', permanent: true },
+      { source: '/hadafsanj', destination: '/', permanent: true },
+      { source: '/planning-agent', destination: '/', permanent: true },
+      { source: '/training', destination: '/', permanent: true },
+      { source: '/solutions/how-to-use', destination: '/', permanent: true },
+      { source: '/solutions/performance', destination: '/', permanent: true },
     ];
   },
   webpack: (config) => {
