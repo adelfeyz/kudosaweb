@@ -4,25 +4,19 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  '@adelfeyz/api': file:./vendor/adelfeyz-api-0.1.3.tgz
-  '@adelfeyz/sdk': file:./vendor/adelfeyz-sdk-0.1.3.tgz
-  '@adelfeyz/ui': file:./vendor/adelfeyz-ui-0.1.3.tgz
-  '@adelfeyz/contract': file:./vendor/adelfeyz-contract-0.1.3.tgz
-
 importers:
 
   .:
     dependencies:
       '@adelfeyz/api':
-        specifier: file:vendor/adelfeyz-api-0.1.3.tgz
-        version: file:vendor/adelfeyz-api-0.1.3.tgz(@types/node@20.19.43)
+        specifier: ^0.1.3
+        version: 0.1.3(@types/node@20.19.43)
       '@adelfeyz/sdk':
-        specifier: file:vendor/adelfeyz-sdk-0.1.3.tgz
-        version: file:vendor/adelfeyz-sdk-0.1.3.tgz(react@19.2.7)
+        specifier: ^0.1.3
+        version: 0.1.3(react@19.2.7)
       '@adelfeyz/ui':
-        specifier: file:vendor/adelfeyz-ui-0.1.3.tgz
-        version: file:vendor/adelfeyz-ui-0.1.3.tgz(@floating-ui/dom@1.8.0)(@tiptap/core@3.28.0(@tiptap/pm@3.28.0))(@tiptap/extension-code-block@3.28.0(@tiptap/core@3.28.0(@tiptap/pm@3.28.0))(@tiptap/pm@3.28.0))(@tiptap/extensions@3.28.0(@tiptap/core@3.28.0(@tiptap/pm@3.28.0))(@tiptap/pm@3.28.0))(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(highlight.js@11.11.1)(next@15.3.5(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react-is@16.13.1)(react@19.2.7)(redux@5.0.1)
+        specifier: ^0.1.3
+        version: 0.1.3(@floating-ui/dom@1.8.0)(@tiptap/core@3.28.0(@tiptap/pm@3.28.0))(@tiptap/extension-code-block@3.28.0(@tiptap/core@3.28.0(@tiptap/pm@3.28.0))(@tiptap/pm@3.28.0))(@tiptap/extensions@3.28.0(@tiptap/core@3.28.0(@tiptap/pm@3.28.0))(@tiptap/pm@3.28.0))(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(highlight.js@11.11.1)(next@15.3.5(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react-is@16.13.1)(react@19.2.7)(redux@5.0.1)
       '@babel/parser':
         specifier: ^7.28.4
         version: 7.29.7
@@ -318,24 +312,20 @@ packages:
   '@acemir/cssom@0.9.31':
     resolution: {integrity: sha512-ZnR3GSaH+/vJ0YlHau21FjfLYjMpYVIzTD8M8vIEQvIGxeOXyXdzCI140rrCY862p/C/BbzWsjc1dgnM9mkoTA==}
 
-  '@adelfeyz/api@file:vendor/adelfeyz-api-0.1.3.tgz':
-    resolution: {integrity: sha512-GNhXurWV5jEWolFJNmeUaW28wFsbwsIpQmqgN9X6AsHWRpjZY3214pzBQ0YdHmmfYHhG9wuMeFHNvDwAfAkMMg==, tarball: file:vendor/adelfeyz-api-0.1.3.tgz}
-    version: 0.1.3
+  '@adelfeyz/api@0.1.3':
+    resolution: {integrity: sha512-80cUqWtKSwvtKNwCnosLk0BK6rLBK5zb1ebulqZMHrMPfWnPUG//jE0nflGuF4vNkiz5nZ9/goObRa9Oc2cfxg==, tarball: https://npm.pkg.github.com/download/@adelfeyz/api/0.1.3/66dfcc919344f1cea5ec49f4da9f8596fefc410f}
     hasBin: true
 
-  '@adelfeyz/contract@file:vendor/adelfeyz-contract-0.1.3.tgz':
-    resolution: {integrity: sha512-6L6+Y7kpjVRI3+ERr18CUBoX3cd6y1chWxnETONr3E+xb132hLBuu7Ex7y4qw9IVnmaGEL5RiZO/D+qfsnWZDw==, tarball: file:vendor/adelfeyz-contract-0.1.3.tgz}
-    version: 0.1.3
+  '@adelfeyz/contract@0.1.3':
+    resolution: {integrity: sha512-v5Wvzo+/3KFBsa7B9bN44etTRhFIotq+kwhmJJNyTvyAvbs5rklrKfROA+GTh5vgKQVEFciOiNUJWXvtsaHThQ==, tarball: https://npm.pkg.github.com/download/@adelfeyz/contract/0.1.3/b87b19238d397638d368beccc272a440e51e93e9}
 
-  '@adelfeyz/sdk@file:vendor/adelfeyz-sdk-0.1.3.tgz':
-    resolution: {integrity: sha512-8gPRZuMcvEZ+zgzI1e2Z0x2H4MmMJDS4ziCZqkrGgnufiMytEGFGRdVsztzSUVVnmZOUJ3WigGL01U3B5CzUHQ==, tarball: file:vendor/adelfeyz-sdk-0.1.3.tgz}
-    version: 0.1.3
+  '@adelfeyz/sdk@0.1.3':
+    resolution: {integrity: sha512-KjxVkt7RY0yuY8esOJm8xRsWTgtZEwC/VH3op2hX4mikFCR/DVUlzfCtufi4fuBzxFTjTD9QrdrKJtCc/1EUqA==, tarball: https://npm.pkg.github.com/download/@adelfeyz/sdk/0.1.3/57c9f3b5f9d088c0e8570cf9fcf979e20fafaf3d}
     peerDependencies:
       react: ^19.0.0
 
-  '@adelfeyz/ui@file:vendor/adelfeyz-ui-0.1.3.tgz':
-    resolution: {integrity: sha512-e4wHDARPbi1QTGo7oFFy4uDaJsMG+g0bzODwCLu/uhPuJrydEJiPFQayMNtul6ZdjJ+yBjDmQgm3ypPSXiCYNg==, tarball: file:vendor/adelfeyz-ui-0.1.3.tgz}
-    version: 0.1.3
+  '@adelfeyz/ui@0.1.3':
+    resolution: {integrity: sha512-nN6nwHMGSvJaPrdyLJVrAyLUmw5kxls/f/PHp56w15e44IUtSR6nx0OZqNxYw+EzeKs1Dk/os5Iu8v5SAiVO5A==, tarball: https://npm.pkg.github.com/download/@adelfeyz/ui/0.1.3/32fed44f3fc83dd6a888caad1741fddcd09b6787}
     peerDependencies:
       next: ^15.0.0
       react: ^19.0.0
@@ -5225,7 +5215,7 @@ snapshots:
 
   '@acemir/cssom@0.9.31': {}
 
-  '@adelfeyz/api@file:vendor/adelfeyz-api-0.1.3.tgz(@types/node@20.19.43)':
+  '@adelfeyz/api@0.1.3(@types/node@20.19.43)':
     dependencies:
       '@hono/node-server': 1.19.14(hono@4.12.31)
       '@libsql/client': 0.15.15
@@ -5245,16 +5235,16 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@adelfeyz/contract@file:vendor/adelfeyz-contract-0.1.3.tgz': {}
+  '@adelfeyz/contract@0.1.3': {}
 
-  '@adelfeyz/sdk@file:vendor/adelfeyz-sdk-0.1.3.tgz(react@19.2.7)':
+  '@adelfeyz/sdk@0.1.3(react@19.2.7)':
     dependencies:
-      '@adelfeyz/contract': file:vendor/adelfeyz-contract-0.1.3.tgz
+      '@adelfeyz/contract': 0.1.3
       react: 19.2.7
 
-  '@adelfeyz/ui@file:vendor/adelfeyz-ui-0.1.3.tgz(@floating-ui/dom@1.8.0)(@tiptap/core@3.28.0(@tiptap/pm@3.28.0))(@tiptap/extension-code-block@3.28.0(@tiptap/core@3.28.0(@tiptap/pm@3.28.0))(@tiptap/pm@3.28.0))(@tiptap/extensions@3.28.0(@tiptap/core@3.28.0(@tiptap/pm@3.28.0))(@tiptap/pm@3.28.0))(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(highlight.js@11.11.1)(next@15.3.5(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react-is@16.13.1)(react@19.2.7)(redux@5.0.1)':
+  '@adelfeyz/ui@0.1.3(@floating-ui/dom@1.8.0)(@tiptap/core@3.28.0(@tiptap/pm@3.28.0))(@tiptap/extension-code-block@3.28.0(@tiptap/core@3.28.0(@tiptap/pm@3.28.0))(@tiptap/pm@3.28.0))(@tiptap/extensions@3.28.0(@tiptap/core@3.28.0(@tiptap/pm@3.28.0))(@tiptap/pm@3.28.0))(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(highlight.js@11.11.1)(next@15.3.5(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react-is@16.13.1)(react@19.2.7)(redux@5.0.1)':
     dependencies:
-      '@adelfeyz/sdk': file:vendor/adelfeyz-sdk-0.1.3.tgz(react@19.2.7)
+      '@adelfeyz/sdk': 0.1.3(react@19.2.7)
       '@radix-ui/react-accordion': 1.2.17(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@radix-ui/react-alert-dialog': 1.1.20(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@radix-ui/react-aspect-ratio': 1.1.12(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)

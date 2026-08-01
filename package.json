@@ -21,9 +21,9 @@
         "check:brand": "node scripts/check-brand.js"
     },
     "dependencies": {
-        "@adelfeyz/api": "file:./vendor/adelfeyz-api-0.1.3.tgz",
-        "@adelfeyz/sdk": "file:./vendor/adelfeyz-sdk-0.1.3.tgz",
-        "@adelfeyz/ui": "file:./vendor/adelfeyz-ui-0.1.3.tgz",
+        "@adelfeyz/api": "^0.1.6",
+        "@adelfeyz/sdk": "^0.1.6",
+        "@adelfeyz/ui": "^0.1.6",
         "@babel/parser": "^7.28.4",
         "@headlessui/react": "^2.2.8",
         "@heroicons/react": "^2.2.0",
@@ -122,13 +122,5 @@
         "concurrently": "^9.2.1",
         "eslint": "^9.35.0",
         "eslint-config-next": "^15.5.3"
-    },
-    "pnpm": {
-        "overrides": {
-            "@adelfeyz/api": "file:./vendor/adelfeyz-api-0.1.3.tgz",
-            "@adelfeyz/sdk": "file:./vendor/adelfeyz-sdk-0.1.3.tgz",
-            "@adelfeyz/ui": "file:./vendor/adelfeyz-ui-0.1.3.tgz",
-            "@adelfeyz/contract": "file:./vendor/adelfeyz-contract-0.1.3.tgz"
-        }
     }
 }
