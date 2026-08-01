@@ -1,0 +1,1 @@
+UPDATE admin_users SET permissions = '{"blog": ["create", "read", "update", "delete"], "users": ["create", "read", "update", "delete"], "analytics": ["read"], "contacts": ["read", "delete"], "demos": ["read", "delete"], "newsletters": ["read", "delete"]}' WHERE id = 1;

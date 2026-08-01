@@ -1,0 +1,74 @@
+version: '3.8'
+
+# Multi-instance Docker Compose template
+# Copy this file for each instance and customize the environment variables
+
+services:
+  website:
+    build:
+      context: ../..
+      dockerfile: docker/website/Dockerfile
+    container_name: ${INSTANCE_NAME:-website}-website
+    ports:
+      - "${WEBSITE_PORT:-3000}:3000"
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_API_BASE_URL=${API_BASE_URL:-http://api:3001}
+      - NEXT_PUBLIC_SITE_URL=${SITE_URL:-http://localhost:3000}
+      - PORT=3000
+    networks:
+      - ${INSTANCE_NAME:-default}-network
+    restart: unless-stopped
+    depends_on:
+      - api
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  api:
+    build:
+      context: ../..
+      dockerfile: docker/api/Dockerfile
+    container_name: ${INSTANCE_NAME:-api}-api
+    ports:
+      - "${API_PORT:-3001}:3001"
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+      - DB_PATH=/app/data/database.db
+      - SCHEMA_PATH=/app/database/schema.sql
+      - JWT_SECRET=${JWT_SECRET:-change-this-secret-key}
+      - BREVO_API_KEY=${BREVO_API_KEY:-}
+      - TURNSTILE_SECRET_KEY=${TURNSTILE_SECRET_KEY:-}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - CLOUDFLARE_ACCOUNT_ID=${CLOUDFLARE_ACCOUNT_ID:-}
+      - CLOUDFLARE_IMAGES_TOKEN=${CLOUDFLARE_IMAGES_TOKEN:-}
+      - CLOUDFLARE_ACCOUNT_HASH=${CLOUDFLARE_ACCOUNT_HASH:-}
+      - CLOUDFLARE_ACCESS_AUD=${CLOUDFLARE_ACCESS_AUD:-}
+      - CLOUDFLARE_ACCESS_TEAM_DOMAIN=${CLOUDFLARE_ACCESS_TEAM_DOMAIN:-}
+      - APP_BASE_URL=${SITE_URL:-http://localhost:3000}
+    volumes:
+      - ${INSTANCE_NAME:-default}-db-data:/app/data
+    networks:
+      - ${INSTANCE_NAME:-default}-network
+    restart: unless-stopped
+    entrypoint: ["/bin/sh", "/app/entrypoint.sh"]
+    command: ["node", "server.js"]
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  ${INSTANCE_NAME:-default}-db-data:
+    driver: local
+
+networks:
+  ${INSTANCE_NAME:-default}-network:
+    driver: bridge
+

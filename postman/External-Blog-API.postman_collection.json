@@ -1,0 +1,495 @@
+{
+  "info": {
+    "name": "Pointer External Blog API",
+    "description": "API collection for external blog post management with draft-only access.\n\nSETUP INSTRUCTIONS:\n1. Go to /crm/api-keys in your admin panel\n2. Generate a new API key\n3. Copy the generated key\n4. Update the 'apiKey' variable in this collection with your real API key\n5. Start testing!",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "version": "1.0.0"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://unified-api.adel-feiz.workers.dev/api/external/blog",
+      "type": "string"
+    },
+    {
+      "key": "apiKey",
+      "value": "REPLACE_WITH_YOUR_ACTUAL_API_KEY",
+      "type": "string",
+      "description": "Get your API key from the admin panel at /crm/api-keys"
+    }
+  ],
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Test API Key",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/posts?limit=1",
+              "host": ["{{baseUrl}}"],
+              "path": ["posts"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Debug API Key Issues",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/posts?limit=1",
+              "host": ["{{baseUrl}}"],
+              "path": ["posts"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Posts",
+      "item": [
+        {
+          "name": "List Draft Posts",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/posts?page=1&limit=20",
+              "host": ["{{baseUrl}}"],
+              "path": ["posts"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "20"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search Draft Posts",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/posts?search=dental&page=1&limit=10",
+              "host": ["{{baseUrl}}"],
+              "path": ["posts"],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "dental"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Single Draft Post",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/posts/123",
+              "host": ["{{baseUrl}}"],
+              "path": ["posts", "123"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Draft Post",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"New Dental Treatment Options\",\n  \"slug\": \"new-dental-treatment-options\",\n  \"excerpt\": \"Discover our latest dental treatment options for better oral health.\",\n  \"content\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Our new dental treatment options provide better results with less discomfort.\\\"}]}]}\",\n  \"featured_image_url\": \"https://example.com/dental-treatment.jpg\",\n  \"seo_title\": \"New Dental Treatment Options - Pointer\",\n  \"seo_description\": \"Learn about our latest dental treatment options for improved oral health.\",\n  \"meta_keywords\": \"dental treatment, new procedures, oral health\",\n  \"category_ids\": [1, 3],\n  \"tag_ids\": [5, 8, 12]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/posts",
+              "host": ["{{baseUrl}}"],
+              "path": ["posts"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Draft Post",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Updated Dental Treatment Options\",\n  \"excerpt\": \"Updated description of our dental treatment options.\",\n  \"content\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Our updated dental treatment options provide even better results with minimal discomfort.\\\"}]}]}\",\n  \"category_ids\": [1, 2, 3],\n  \"tag_ids\": [5, 8, 10]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/posts/123",
+              "host": ["{{baseUrl}}"],
+              "path": ["posts", "123"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Reference Data",
+      "item": [
+        {
+          "name": "Get Categories",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/categories",
+              "host": ["{{baseUrl}}"],
+              "path": ["categories"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Tags",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/tags",
+              "host": ["{{baseUrl}}"],
+              "path": ["tags"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Default Author",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/authors",
+              "host": ["{{baseUrl}}"],
+              "path": ["authors"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Error Testing",
+      "item": [
+        {
+          "name": "Missing API Key",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/posts",
+              "host": ["{{baseUrl}}"],
+              "path": ["posts"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Invalid API Key",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "invalid-key",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/posts",
+              "host": ["{{baseUrl}}"],
+              "path": ["posts"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Post - Missing Required Fields",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Test Post\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/posts",
+              "host": ["{{baseUrl}}"],
+              "path": ["posts"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Post - Invalid TipTap Content",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Test Post\",\n  \"slug\": \"test-post\",\n  \"content\": \"Invalid JSON content\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/posts",
+              "host": ["{{baseUrl}}"],
+              "path": ["posts"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Non-existent Post",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/posts/99999",
+              "host": ["{{baseUrl}}"],
+              "path": ["posts", "99999"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Rate Limiting Test",
+      "item": [
+        {
+          "name": "Multiple Requests (Test Rate Limit)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/posts?limit=1",
+              "host": ["{{baseUrl}}"],
+              "path": ["posts"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// Add timestamp to requests for rate limiting testing",
+          "pm.globals.set('timestamp', Date.now());",
+          "",
+          "// Validate API key format",
+          "const apiKey = pm.variables.get('apiKey');",
+          "if (!apiKey || apiKey === 'REPLACE_WITH_YOUR_ACTUAL_API_KEY') {",
+          "    console.error('❌ API Key not set! Please update the apiKey variable with your real API key.');",
+          "    console.log('📋 To get your API key:');",
+          "    console.log('1. Go to /crm/api-keys in your admin panel');",
+          "    console.log('2. Generate a new API key');",
+          "    console.log('3. Copy the generated key');",
+          "    console.log('4. Update the apiKey variable in this collection');",
+          "} else if (!apiKey.startsWith('ics_live_')) {",
+          "    console.warn('⚠️ API key format looks incorrect. Expected format: ics_live_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');",
+          "} else {",
+          "    console.log('✅ API key format looks correct');",
+          "}",
+          "",
+          "// Log request details",
+          "console.log('🚀 Making request to:', pm.request.url.toString());",
+          "console.log('🔑 Using API key:', apiKey ? apiKey.substring(0, 20) + '...' : 'NOT SET');"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// Basic response validation",
+          "pm.test('Response time is less than 5000ms', function () {",
+          "    pm.expect(pm.response.responseTime).to.be.below(5000);",
+          "});",
+          "",
+          "pm.test('Response has valid JSON', function () {",
+          "    pm.response.to.be.json;",
+          "});",
+          "",
+          "// Check for rate limiting headers",
+          "if (pm.response.headers.get('X-RateLimit-Limit')) {",
+          "    pm.test('Rate limit headers present', function () {",
+          "        pm.expect(pm.response.headers.get('X-RateLimit-Limit')).to.exist;",
+          "        pm.expect(pm.response.headers.get('X-RateLimit-Remaining')).to.exist;",
+          "    });",
+          "}",
+          "",
+          "// API Key validation tests",
+          "if (pm.response.status === 401) {",
+          "    const responseJson = pm.response.json();",
+          "    if (responseJson.error === 'Invalid API key') {",
+          "        console.error('❌ Invalid API key error!');",
+          "        console.log('🔧 Troubleshooting steps:');",
+          "        console.log('1. Make sure you generated a NEW API key after the recent fix');",
+          "        console.log('2. Check that the API key is correctly set in the collection variables');",
+          "        console.log('3. Verify the API key format: ics_live_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');",
+          "        console.log('4. Test with a fresh API key generation');",
+          "    } else if (responseJson.error === 'API key required') {",
+          "        console.error('❌ API key header missing!');",
+          "        console.log('🔧 Make sure the X-API-Key header is set correctly');",
+          "    }",
+          "}",
+          "",
+          "// Success validation",
+          "if (pm.response.status >= 200 && pm.response.status < 300) {",
+          "    console.log('✅ Request successful!');",
+          "    if (pm.response.json() && pm.response.json().posts) {",
+          "        console.log('📄 Found', pm.response.json().posts.length, 'posts');",
+          "    }",
+          "}",
+          "",
+          "// Log response for debugging",
+          "console.log('📊 Response Status:', pm.response.status);",
+          "console.log('⏱️ Response Time:', pm.response.responseTime + 'ms');",
+          "console.log('📝 Response Body:', pm.response.text().substring(0, 200) + (pm.response.text().length > 200 ? '...' : ''));"
+        ]
+      }
+    }
+  ]
+}
