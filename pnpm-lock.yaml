@@ -4,141 +4,148 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  '@adelfeyz/api': file:./vendor/adelfeyz-api-0.1.9.tgz
+  '@adelfeyz/sdk': file:./vendor/adelfeyz-sdk-0.1.9.tgz
+  '@adelfeyz/ui': file:./vendor/adelfeyz-ui-0.1.9.tgz
+  '@adelfeyz/contract': file:./vendor/adelfeyz-contract-0.1.9.tgz
+  undici: 7.29.0
+
 importers:
 
   .:
     dependencies:
       '@adelfeyz/api':
-        specifier: ^0.1.6
-        version: 0.1.6(@types/node@20.19.43)
+        specifier: file:vendor/adelfeyz-api-0.1.9.tgz
+        version: file:vendor/adelfeyz-api-0.1.9.tgz(@types/node@20.19.43)
       '@adelfeyz/sdk':
-        specifier: ^0.1.6
-        version: 0.1.6(react@19.2.7)
+        specifier: file:vendor/adelfeyz-sdk-0.1.9.tgz
+        version: file:vendor/adelfeyz-sdk-0.1.9.tgz(react@19.2.7)
       '@adelfeyz/ui':
-        specifier: ^0.1.6
-        version: 0.1.6(@floating-ui/dom@1.8.0)(@tiptap/core@3.28.0(@tiptap/pm@3.28.0))(@tiptap/extension-code-block@3.28.0(@tiptap/core@3.28.0(@tiptap/pm@3.28.0))(@tiptap/pm@3.28.0))(@tiptap/extensions@3.28.0(@tiptap/core@3.28.0(@tiptap/pm@3.28.0))(@tiptap/pm@3.28.0))(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(highlight.js@11.11.1)(next@15.3.5(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react-is@16.13.1)(react@19.2.7)(redux@5.0.1)
+        specifier: file:vendor/adelfeyz-ui-0.1.9.tgz
+        version: file:vendor/adelfeyz-ui-0.1.9.tgz(@floating-ui/dom@1.8.0)(@tiptap/core@3.28.0(@tiptap/pm@3.28.0))(@tiptap/extension-code-block@3.28.0(@tiptap/core@3.28.0(@tiptap/pm@3.28.0))(@tiptap/pm@3.28.0))(@tiptap/extensions@3.28.0(@tiptap/core@3.28.0(@tiptap/pm@3.28.0))(@tiptap/pm@3.28.0))(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(highlight.js@11.11.1)(next@15.3.5(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react-is@16.13.1)(react@19.2.7)(redux@5.0.1)
       '@babel/parser':
-        specifier: ^7.28.4
+        specifier: ^7.29.7
         version: 7.29.7
       '@headlessui/react':
-        specifier: ^2.2.8
+        specifier: ^2.2.10
         version: 2.2.10(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@heroicons/react':
         specifier: ^2.2.0
         version: 2.2.0(react@19.2.7)
       '@hookform/resolvers':
-        specifier: ^5.1.1
+        specifier: ^5.4.0
         version: 5.4.0(react-hook-form@7.82.0(react@19.2.7))
       '@number-flow/react':
-        specifier: ^0.5.10
+        specifier: ^0.5.14
         version: 0.5.14(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@radix-ui/react-accordion':
-        specifier: ^1.2.11
+        specifier: ^1.2.17
         version: 1.2.17(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@radix-ui/react-alert-dialog':
-        specifier: ^1.1.14
+        specifier: ^1.1.20
         version: 1.1.20(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@radix-ui/react-aspect-ratio':
-        specifier: ^1.1.7
+        specifier: ^1.1.12
         version: 1.1.12(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@radix-ui/react-avatar':
-        specifier: ^1.1.10
+        specifier: ^1.2.3
         version: 1.2.3(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@radix-ui/react-checkbox':
-        specifier: ^1.3.2
+        specifier: ^1.3.8
         version: 1.3.8(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@radix-ui/react-collapsible':
-        specifier: ^1.1.11
+        specifier: ^1.1.17
         version: 1.1.17(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@radix-ui/react-context-menu':
-        specifier: ^2.2.15
+        specifier: ^2.3.4
         version: 2.3.4(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@radix-ui/react-dialog':
-        specifier: ^1.1.14
+        specifier: ^1.1.20
         version: 1.1.20(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@radix-ui/react-dropdown-menu':
-        specifier: ^2.1.15
+        specifier: ^2.1.21
         version: 2.1.21(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@radix-ui/react-hover-card':
-        specifier: ^1.1.14
+        specifier: ^1.1.20
         version: 1.1.20(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@radix-ui/react-label':
-        specifier: ^2.1.7
+        specifier: ^2.1.12
         version: 2.1.12(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@radix-ui/react-menubar':
-        specifier: ^1.1.15
+        specifier: ^1.1.21
         version: 1.1.21(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@radix-ui/react-navigation-menu':
-        specifier: ^1.2.13
+        specifier: ^1.2.19
         version: 1.2.19(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@radix-ui/react-popover':
-        specifier: ^1.1.14
+        specifier: ^1.1.20
         version: 1.1.20(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@radix-ui/react-progress':
-        specifier: ^1.1.7
+        specifier: ^1.1.13
         version: 1.1.13(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@radix-ui/react-radio-group':
-        specifier: ^1.3.7
+        specifier: ^1.4.4
         version: 1.4.4(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@radix-ui/react-scroll-area':
-        specifier: ^1.2.9
+        specifier: ^1.2.15
         version: 1.2.15(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@radix-ui/react-select':
-        specifier: ^2.2.5
+        specifier: ^2.3.4
         version: 2.3.4(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@radix-ui/react-separator':
-        specifier: ^1.1.7
+        specifier: ^1.1.12
         version: 1.1.12(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@radix-ui/react-slider':
-        specifier: ^1.3.5
+        specifier: ^1.4.4
         version: 1.4.4(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@radix-ui/react-slot':
-        specifier: ^1.2.3
+        specifier: ^1.3.0
         version: 1.3.0(@types/react@19.2.17)(react@19.2.7)
       '@radix-ui/react-switch':
-        specifier: ^1.2.5
+        specifier: ^1.3.4
         version: 1.3.4(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@radix-ui/react-tabs':
-        specifier: ^1.1.12
+        specifier: ^1.1.18
         version: 1.1.18(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@radix-ui/react-toggle':
-        specifier: ^1.1.9
+        specifier: ^1.1.15
         version: 1.1.15(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@radix-ui/react-toggle-group':
-        specifier: ^1.1.10
+        specifier: ^1.1.16
         version: 1.1.16(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@radix-ui/react-tooltip':
-        specifier: ^1.2.7
+        specifier: ^1.2.13
         version: 1.2.13(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@react-three/drei':
-        specifier: ^10.4.4
+        specifier: ^10.7.7
         version: 10.7.7(@react-three/fiber@9.6.1(@types/react@19.2.17)(immer@11.1.15)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.178.0))(@types/react@19.2.17)(@types/three@0.178.1)(immer@11.1.15)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.178.0)
       '@react-three/fiber':
-        specifier: ^9.0.0-alpha.8
+        specifier: ^9.6.1
         version: 9.6.1(@types/react@19.2.17)(immer@11.1.15)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(three@0.178.0)
       '@tabler/icons-react':
-        specifier: ^3.35.0
+        specifier: ^3.45.0
         version: 3.45.0(react@19.2.7)
       '@tailwindcss/postcss':
-        specifier: ^4
+        specifier: ^4.3.3
         version: 4.3.3
       '@tailwindcss/typography':
-        specifier: ^0.5.16
+        specifier: ^0.5.20
         version: 0.5.20(tailwindcss@4.3.3)
       '@tsparticles/engine':
-        specifier: ^3.8.1
+        specifier: ^3.9.1
         version: 3.9.1
       '@tsparticles/react':
         specifier: ^3.0.0
         version: 3.0.0(@tsparticles/engine@3.9.1)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@tsparticles/slim':
-        specifier: ^3.8.1
+        specifier: ^3.9.1
         version: 3.9.1
       atmn:
         specifier: ^0.0.24
         version: 0.0.24(@types/node@20.19.43)
       autumn-js:
-        specifier: ^0.1.34
+        specifier: ^0.1.85
         version: 0.1.85(react@19.2.7)
       class-variance-authority:
         specifier: ^0.7.1
@@ -150,10 +157,10 @@ importers:
         specifier: ^1.1.1
         version: 1.1.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       cobe:
-        specifier: ^0.6.4
+        specifier: ^0.6.5
         version: 0.6.5
       date-fns:
-        specifier: ^4.1.0
+        specifier: ^4.4.0
         version: 4.4.0
       dotted-map:
         specifier: ^2.2.3
@@ -171,7 +178,7 @@ importers:
         specifier: 2.0.2
         version: 2.0.2
       framer-motion:
-        specifier: ^12.23.12
+        specifier: ^12.42.2
         version: 12.42.2(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       input-otp:
         specifier: ^1.4.2
@@ -183,13 +190,13 @@ importers:
         specifier: ^1.4.4
         version: 1.4.4
       motion:
-        specifier: ^12.23.12
+        specifier: ^12.42.2
         version: 12.42.2(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       motion-dom:
-        specifier: ^12.23.12
+        specifier: ^12.42.2
         version: 12.42.2
       nanoid:
-        specifier: ^5.1.6
+        specifier: ^5.1.16
         version: 5.1.16
       next:
         specifier: 15.3.5
@@ -201,61 +208,61 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0
       react:
-        specifier: ^19.0.0
+        specifier: ^19.2.7
         version: 19.2.7
       react-day-picker:
-        specifier: ^9.8.0
+        specifier: ^9.14.0
         version: 9.14.0(react@19.2.7)
       react-dom:
-        specifier: ^19.0.0
+        specifier: ^19.2.7
         version: 19.2.7(react@19.2.7)
       react-fast-marquee:
         specifier: ^1.6.5
         version: 1.6.5(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       react-hook-form:
-        specifier: ^7.60.0
+        specifier: ^7.82.0
         version: 7.82.0(react@19.2.7)
       react-icons:
-        specifier: ^5.5.0
+        specifier: ^5.7.0
         version: 5.7.0(react@19.2.7)
       react-intersection-observer:
         specifier: ^9.16.0
         version: 9.16.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       react-resizable-panels:
-        specifier: ^3.0.3
+        specifier: ^3.0.6
         version: 3.0.6(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       react-responsive-masonry:
-        specifier: ^2.7.1
+        specifier: ^2.7.2
         version: 2.7.2
       react-rough-notation:
-        specifier: ^1.0.5
+        specifier: ^1.0.8
         version: 1.0.8(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       react-syntax-highlighter:
-        specifier: ^15.6.1
+        specifier: ^15.6.6
         version: 15.6.6(react@19.2.7)
       react-wrap-balancer:
         specifier: ^1.1.1
         version: 1.1.1(react@19.2.7)
       recharts:
-        specifier: ^3.0.2
+        specifier: ^3.9.2
         version: 3.9.2(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react-is@16.13.1)(react@19.2.7)(redux@5.0.1)
       simplex-noise:
         specifier: ^4.0.3
         version: 4.0.3
       sonner:
-        specifier: ^2.0.6
+        specifier: ^2.0.7
         version: 2.0.7(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       stripe:
         specifier: ^18.5.0
         version: 18.5.0(@types/node@20.19.43)
       swiper:
-        specifier: ^12.0.1
+        specifier: ^12.2.0
         version: 12.2.0
       tailwind-merge:
-        specifier: ^3.3.1
+        specifier: ^3.6.0
         version: 3.6.0
       tailwindcss:
-        specifier: ^4
+        specifier: ^4.3.3
         version: 4.3.3
       tailwindcss-animate:
         specifier: ^1.0.7
@@ -264,47 +271,47 @@ importers:
         specifier: ^0.178.0
         version: 0.178.0
       three-globe:
-        specifier: ^2.43.0
+        specifier: ^2.45.2
         version: 2.45.2(three@0.178.0)
       tw-animate-css:
-        specifier: ^1.3.8
+        specifier: ^1.4.0
         version: 1.4.0
       typescript:
-        specifier: ^5
+        specifier: ^5.9.3
         version: 5.9.3
       vaul:
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       zod:
-        specifier: ^4.1.8
+        specifier: ^4.4.3
         version: 4.4.3
     devDependencies:
       '@eslint/eslintrc':
-        specifier: ^3.3.1
+        specifier: ^3.3.6
         version: 3.3.6
       '@types/node':
-        specifier: ^20
+        specifier: ^20.19.43
         version: 20.19.43
       '@types/react':
-        specifier: ^19
+        specifier: ^19.2.17
         version: 19.2.17
       '@types/react-dom':
-        specifier: ^19
+        specifier: ^19.2.3
         version: 19.2.3(@types/react@19.2.17)
       '@types/react-syntax-highlighter':
         specifier: ^15.5.13
         version: 15.5.13
       '@types/three':
-        specifier: ^0.178.0
+        specifier: ^0.178.1
         version: 0.178.1
       concurrently:
-        specifier: ^9.2.1
+        specifier: ^9.2.4
         version: 9.2.4
       eslint:
-        specifier: ^9.35.0
+        specifier: ^9.39.5
         version: 9.39.5(jiti@2.7.0)
       eslint-config-next:
-        specifier: ^15.5.3
+        specifier: ^15.5.20
         version: 15.5.20(eslint@9.39.5(jiti@2.7.0))(typescript@5.9.3)
 
 packages:
@@ -312,20 +319,24 @@ packages:
   '@acemir/cssom@0.9.31':
     resolution: {integrity: sha512-ZnR3GSaH+/vJ0YlHau21FjfLYjMpYVIzTD8M8vIEQvIGxeOXyXdzCI140rrCY862p/C/BbzWsjc1dgnM9mkoTA==}
 
-  '@adelfeyz/api@0.1.6':
-    resolution: {integrity: sha512-7b2/0LzEtomiFpwx6FcP1kOpx3A4bBHEqtUxikrZBTKLLYf37ua03RS1dxiKK9WhA8DaQkw4G+mv1ybUDMNtuA==, tarball: https://npm.pkg.github.com/download/@adelfeyz/api/0.1.6/3fcea3e232abc64d29801caaab21fb38fb06c13b}
+  '@adelfeyz/api@file:vendor/adelfeyz-api-0.1.9.tgz':
+    resolution: {integrity: sha512-cMnk+YY9MNKFlRhemPuxUzgsHmNIPt9GAWSBfMwDV1d9EK+IbkwxgdkaQyAS213n3YX0dwaVGjk2wZYG7L97gA==, tarball: file:vendor/adelfeyz-api-0.1.9.tgz}
+    version: 0.1.9
     hasBin: true
 
-  '@adelfeyz/contract@0.1.6':
-    resolution: {integrity: sha512-6UloLFqQkFZerMmw2DuwpAXuLocL5Uu0+ABoTBEYm0RnMdwkUijQJ1bIAlUQCSH2xg7HID4yxuI0ydGvECpXzg==, tarball: https://npm.pkg.github.com/download/@adelfeyz/contract/0.1.6/5715a50e57a86678c8000203cfaa13353fd5dae0}
+  '@adelfeyz/contract@file:vendor/adelfeyz-contract-0.1.9.tgz':
+    resolution: {integrity: sha512-5YdVF2WBQmIKO5zO2DBNL22OgiktRPETLZBpCmXFrrBV/eivxSO4aPWSEwpg4N+EvQtBGYSFvk//Lmi/JDglhg==, tarball: file:vendor/adelfeyz-contract-0.1.9.tgz}
+    version: 0.1.9
 
-  '@adelfeyz/sdk@0.1.6':
-    resolution: {integrity: sha512-Eqyi42tiwdE2S/ul/b8I7kylA9vYmpFUEdKJWxiADZu6FsogT72Gq5QVtiDHdNUHo/5IWEUMgGa+InX8MfcJGw==, tarball: https://npm.pkg.github.com/download/@adelfeyz/sdk/0.1.6/b8626a820355ea1eb2dc3202317913d09a682f07}
+  '@adelfeyz/sdk@file:vendor/adelfeyz-sdk-0.1.9.tgz':
+    resolution: {integrity: sha512-6RkZ3ezzt2EM3lmhS0bXKAe9Gl1EwVGEk2au4BhUty962V27diJJuX4kvVXBFBE8AcxoeXlFvx7ozPBFozgmVQ==, tarball: file:vendor/adelfeyz-sdk-0.1.9.tgz}
+    version: 0.1.9
     peerDependencies:
       react: ^19.0.0
 
-  '@adelfeyz/ui@0.1.6':
-    resolution: {integrity: sha512-ORR53JfpKZ3LuEgMBgPf+78/gSgtzB5TNMCKJQVGJfi7afyyAkzdWstRU5/CMhFT6RVDz3cmWsAxKAEJ3uv/0w==, tarball: https://npm.pkg.github.com/download/@adelfeyz/ui/0.1.6/29b43b4290989fcbb42aae1058312bd0118276b5}
+  '@adelfeyz/ui@file:vendor/adelfeyz-ui-0.1.9.tgz':
+    resolution: {integrity: sha512-OBUskCbEPbV6IgMMR86CrrkFY+YbqkySsAQzFneXTXBq2x/1ISzBTP1dvKcZzjZJof5YwFFNYr1V7AcOP/ylCA==, tarball: file:vendor/adelfeyz-ui-0.1.9.tgz}
+    version: 0.1.9
     peerDependencies:
       next: ^15.0.0
       react: ^19.0.0
@@ -3876,7 +3887,6 @@ packages:
 
   libsql@0.5.29:
     resolution: {integrity: sha512-8lMP8iMgiBzzoNbAPQ59qdVcj6UaE/Vnm+fiwX4doX4Narook0a4GPKWBEv+CR8a1OwbfkgL18uBfBjWdF0Fzg==}
-    cpu: [x64, arm64, wasm32, arm]
     os: [darwin, linux, win32]
 
   lie@3.3.0:
@@ -4996,8 +5006,8 @@ packages:
   undici-types@6.21.0:
     resolution: {integrity: sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==}
 
-  undici@7.28.0:
-    resolution: {integrity: sha512-cRZYrTDwWznlnRiPjggAGxZXanty6M8RV1ff8Wm4LWXBp7/IG8v5DnOm74DtUBp9OONpK75YlPnIjQqX0dBDtA==}
+  undici@7.29.0:
+    resolution: {integrity: sha512-IDxfleLmmbSskfWSUATiN1nfn2rDuvnMOqb5CWR92iIfojA0Ud+ulOAAEQ57LPr9rWmsreUyf5lwyao+7GNNVw==}
     engines: {node: '>=20.18.1'}
 
   unrs-resolver@1.12.2:
@@ -5219,7 +5229,7 @@ snapshots:
 
   '@acemir/cssom@0.9.31': {}
 
-  '@adelfeyz/api@0.1.6(@types/node@20.19.43)':
+  '@adelfeyz/api@file:vendor/adelfeyz-api-0.1.9.tgz(@types/node@20.19.43)':
     dependencies:
       '@hono/node-server': 1.19.14(hono@4.12.31)
       '@libsql/client': 0.15.15
@@ -5231,6 +5241,7 @@ snapshots:
       jsdom: 28.1.0
       jwt-decode: 4.0.0
       sharp: 0.35.3(@types/node@20.19.43)
+      undici: 7.29.0
     transitivePeerDependencies:
       - '@noble/hashes'
       - '@types/node'
@@ -5239,16 +5250,16 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@adelfeyz/contract@0.1.6': {}
+  '@adelfeyz/contract@file:vendor/adelfeyz-contract-0.1.9.tgz': {}
 
-  '@adelfeyz/sdk@0.1.6(react@19.2.7)':
+  '@adelfeyz/sdk@file:vendor/adelfeyz-sdk-0.1.9.tgz(react@19.2.7)':
     dependencies:
-      '@adelfeyz/contract': 0.1.6
+      '@adelfeyz/contract': file:vendor/adelfeyz-contract-0.1.9.tgz
       react: 19.2.7
 
-  '@adelfeyz/ui@0.1.6(@floating-ui/dom@1.8.0)(@tiptap/core@3.28.0(@tiptap/pm@3.28.0))(@tiptap/extension-code-block@3.28.0(@tiptap/core@3.28.0(@tiptap/pm@3.28.0))(@tiptap/pm@3.28.0))(@tiptap/extensions@3.28.0(@tiptap/core@3.28.0(@tiptap/pm@3.28.0))(@tiptap/pm@3.28.0))(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(highlight.js@11.11.1)(next@15.3.5(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react-is@16.13.1)(react@19.2.7)(redux@5.0.1)':
+  '@adelfeyz/ui@file:vendor/adelfeyz-ui-0.1.9.tgz(@floating-ui/dom@1.8.0)(@tiptap/core@3.28.0(@tiptap/pm@3.28.0))(@tiptap/extension-code-block@3.28.0(@tiptap/core@3.28.0(@tiptap/pm@3.28.0))(@tiptap/pm@3.28.0))(@tiptap/extensions@3.28.0(@tiptap/core@3.28.0(@tiptap/pm@3.28.0))(@tiptap/pm@3.28.0))(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(highlight.js@11.11.1)(next@15.3.5(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react-is@16.13.1)(react@19.2.7)(redux@5.0.1)':
     dependencies:
-      '@adelfeyz/sdk': 0.1.6(react@19.2.7)
+      '@adelfeyz/sdk': file:vendor/adelfeyz-sdk-0.1.9.tgz(react@19.2.7)
       '@fortawesome/fontawesome-free': 6.4.0
       '@radix-ui/react-accordion': 1.2.17(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@radix-ui/react-alert-dialog': 1.1.20(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -7792,7 +7803,7 @@ snapshots:
       parse5: 7.3.0
       parse5-htmlparser2-tree-adapter: 7.1.0
       parse5-parser-stream: 7.1.2
-      undici: 7.28.0
+      undici: 7.29.0
       whatwg-mimetype: 4.0.0
 
   chownr@1.1.4: {}
@@ -8960,7 +8971,7 @@ snapshots:
       saxes: 6.0.0
       symbol-tree: 3.2.4
       tough-cookie: 6.0.2
-      undici: 7.28.0
+      undici: 7.29.0
       w3c-xmlserializer: 5.0.0
       webidl-conversions: 8.0.1
       whatwg-mimetype: 5.0.0
@@ -10279,7 +10290,7 @@ snapshots:
 
   undici-types@6.21.0: {}
 
-  undici@7.28.0: {}
+  undici@7.29.0: {}
 
   unrs-resolver@1.12.2:
     dependencies:
